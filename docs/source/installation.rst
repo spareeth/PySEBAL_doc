@@ -168,7 +168,7 @@ To test whether the PySEBAL will run, open OSGeo4W Shell, and type following com
 Installation in Linux
 =====================
 
-The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in ** Bash for Windows ** app with Ubuntu inside windows 10.
+The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in **Bash for Windows** app with Ubuntu inside windows 10.
 
 .. note::
 
@@ -251,7 +251,9 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
 
 | Open a OSGeo4W Shell and change the directory to ``D:\PySEBAL_dev\SEBAL`` and follow the commands given below.
 
-** In Windows**
+| **In Windows**
+
+
 .. code-block:: Shell
    :linenos:
 
@@ -262,7 +264,8 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
    # Run the PySEBAL script
    python Run_py2.py
 
-** In Linux**
+| **In Linux**
+
 .. code-block:: Shell
    :linenos:
 
@@ -281,7 +284,7 @@ After the above commands, there will be a ``output`` folder inside ``D:\PySEBAL\
 
 .. warning::
 
-   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the above commands accordingly.
+   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the path in above commands accordingly.
 
 .. note::
 

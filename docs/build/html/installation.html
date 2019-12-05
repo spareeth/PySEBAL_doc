@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#testing-installation">Testing installation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#test-run-pysebal">Test run PySEBAL</a></li>
 </ul>
 </li>
 </ul>
@@ -462,6 +463,60 @@ import pysebal_py2
 exit<span class="o">()</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+</div>
+<div class="section" id="test-run-pysebal">
+<h2>Test run PySEBAL<a class="headerlink" href="#test-run-pysebal" title="Permalink to this headline">¶</a></h2>
+<p>Once PySEBAL is installed, we can run the PySEBAL code using the test data provided with the PySEBAL_dev library. The test data is located in the folder <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\test_data</span></code>. If you have installed PySEBAL in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive then it should be <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data</span></code>.</p>
+<div class="line-block">
+<div class="line">Assuming that PySEBAL_dev is in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, Let us run the library with test data.</div>
+</div>
+<div class="line-block">
+<div class="line">Open a OSGeo4W Shell and change the directory to <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> and follow the commands given below.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>In Windows</strong></div>
+</div>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
+<span class="c1"># change to the PySEBAL_dev\SEBAL directory</span>
+<span class="nb">cd</span> D:<span class="se">\P</span>ySEBAL_dev<span class="se">\S</span>EBAL
+<span class="c1"># Run the PySEBAL script</span>
+python Run_py2.py
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line"><strong>In Linux</strong></div>
+</div>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
+<span class="c1"># change to the PySEBAL_dev\SEBAL directory</span>
+<span class="nb">cd</span> <span class="se">\m</span>nt<span class="se">\d\P</span>ySEBAL_dev<span class="se">\S</span>EBAL
+<span class="c1"># Run the PySEBAL script</span>
+python Run_py2.py
+</pre></div>
+</td></tr></table></div>
+<p>After the above commands, there will be a <code class="docutils literal notranslate"><span class="pre">output</span></code> folder inside <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL\test_data</span></code> with the following structure.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/pysebal_folderstr.png"><img alt="_images/pysebal_folderstr.png" src="_images/pysebal_folderstr.png" style="width: 200px;" /></a>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If PySEBAL_dev is not in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, adapt changes to the above commands accordingly.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Now go to the folder <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data\output\Output_evapotranspiration</span></code> and check the daily ETa map (<em>L8_ETact_24_30m_2014_03_10_069.tif</em>) in QGIS.</p>
 </div>
 </div>
 </div>
