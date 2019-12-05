@@ -241,3 +241,48 @@ Open a terminal and type in following codes to test if the installation is succe
    # If there are no errors, the installation is successful
    # To exit from python (ctrl-d)
    exit()
+
+Test run PySEBAL
+================
+
+Once PySEBAL is installed, we can run the PySEBAL code using the test data provided with the PySEBAL_dev library. The test data is located in the folder ``PySEBAL_dev\test_data``. If you have installed PySEBAL in ``D:`` drive then it should be ``D:\PySEBAL_dev\test_data``.
+
+| Assuming that PySEBAL_dev is in ``D:`` drive, Let us run the library with test data.
+
+| Open a OSGeo4W Shell and change the directory to ``D:\PySEBAL_dev\SEBAL`` and follow the commands given below.
+
+** In Windows**
+.. code-block:: Shell
+   :linenos:
+
+   # After each command click enter
+   # Any line starting with '#' is comment line
+   # change to the PySEBAL_dev\SEBAL directory
+   cd D:\PySEBAL_dev\SEBAL
+   # Run the PySEBAL script
+   python Run_py2.py
+
+** In Linux**
+.. code-block:: Shell
+   :linenos:
+
+   # After each command click enter
+   # Any line starting with '#' is comment line
+   # change to the PySEBAL_dev\SEBAL directory
+   cd \mnt\d\PySEBAL_dev\SEBAL
+   # Run the PySEBAL script
+   python Run_py2.py
+
+After the above commands, there will be a ``output`` folder inside ``D:\PySEBAL\test_data`` with the following structure.
+
+.. figure:: img/pysebal_folderstr.png
+   :align: center
+   :width: 200
+
+.. warning::
+
+   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the above commands accordingly.
+
+.. note::
+
+   Now go to the folder ``D:\PySEBAL_dev\test_data\output\Output_evapotranspiration`` and check the daily ETa map (*L8_ETact_24_30m_2014_03_10_069.tif*) in QGIS.

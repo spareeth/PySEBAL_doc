@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#testing-installation">Testing installation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#test-run-pysebal">Test run PySEBAL</a></li>
 </ul>
 </li>
 </ul>
@@ -463,6 +464,64 @@ import pysebal_py2
 exit<span class="o">()</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+</div>
+<div class="section" id="test-run-pysebal">
+<h2>Test run PySEBAL<a class="headerlink" href="#test-run-pysebal" title="Permalink to this headline">¶</a></h2>
+<p>Once PySEBAL is installed, we can run the PySEBAL code using the test data provided with the PySEBAL_dev library. The test data is located in the folder <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\test_data</span></code>. If you have installed PySEBAL in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive then it should be <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data</span></code>.</p>
+<div class="line-block">
+<div class="line">Assuming that PySEBAL_dev is in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, Let us run the library with test data.</div>
+</div>
+<div class="line-block">
+<div class="line">Open a OSGeo4W Shell and change the directory to <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> and follow the commands given below.</div>
+</div>
+<p>** In Windows**
+.. code-block:: Shell</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">linenos:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p># After each command click enter
+# Any line starting with ‘#’ is comment line
+# change to the PySEBAL_devSEBAL directory
+cd D:PySEBAL_devSEBAL
+# Run the PySEBAL script
+python Run_py2.py</p>
+</div></blockquote>
+<p>** In Linux**
+.. code-block:: Shell</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">linenos:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p># After each command click enter
+# Any line starting with ‘#’ is comment line
+# change to the PySEBAL_devSEBAL directory
+cd mntdPySEBAL_devSEBAL
+# Run the PySEBAL script
+python Run_py2.py</p>
+</div></blockquote>
+<p>After the above commands, there will be a <code class="docutils literal notranslate"><span class="pre">output</span></code> folder inside <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL\test_data</span></code> with the following structure.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/pysebal_folderstr.png"><img alt="_images/pysebal_folderstr.png" src="_images/pysebal_folderstr.png" style="width: 200px;" /></a>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If PySEBAL_dev is not in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, adapt changes to the above commands accordingly.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Now go to the folder <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data\output\Output_evapotranspiration</span></code> and check the daily ETa map (<em>L8_ETact_24_30m_2014_03_10_069.tif</em>) in QGIS.</p>
 </div>
 </div>
 </div>
