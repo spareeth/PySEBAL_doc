@@ -168,7 +168,7 @@ To test whether the PySEBAL will run, open OSGeo4W Shell, and type following com
 Installation in Linux
 =====================
 
-The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in ** Bash for Windows ** app with Ubuntu inside windows 10.
+The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in **Bash for Windows** app with Ubuntu inside windows 10.
 
 .. note::
 
@@ -284,7 +284,7 @@ After the above commands, there will be a ``output`` folder inside ``D:\PySEBAL\
 
 .. warning::
 
-   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the above commands accordingly.
+   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the path in above commands accordingly.
 
 .. note::
 
