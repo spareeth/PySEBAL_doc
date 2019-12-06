@@ -21,7 +21,7 @@
 
 project = u'PySEBAL_doc'
 copyright = u'2019, Sajid Pareeth'
-author = u'Sajid Pareeth'
+author = u'Sajid Pareeth, Poolad Karimi, Tim Hessels,'
 
 # The short X.Y version
 version = u''
@@ -177,6 +177,7 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+copyright = "© 2019 IHE Delft Institute for Water Education"
 
 # -- Extension configuration -------------------------------------------------
 def setup(app):
