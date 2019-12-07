@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PySEBAL data requirements &mdash; PySEBAL_doc 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PySEBAL Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PySEBAL_doc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="installation.html">PySEBAL Installation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PySEBAL data requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#satellite-data">Satellite data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#acquiring-landsat-data">Acquiring Landsat data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bulk-download-landsat-data-using-command-line">Bulk download Landsat data using command line</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#computing-requirements">Computing requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-in-windows">Installation in Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-in-linux">Installation in Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#test-run-pysebal">Test run PySEBAL</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PySEBAL data requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#satellite-data">Satellite data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#acquiring-landsat-data">Acquiring Landsat data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bulk-download-landsat-data-using-command-line">Bulk download Landsat data using command line</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySEBAL_doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="installation.html">PySEBAL Installation</a> &raquo;</li>
+        
+      <li>PySEBAL data requirements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pysebal-data-requirements">
+<h1>PySEBAL data requirements<a class="headerlink" href="#pysebal-data-requirements" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>To run PySEBAL we need the following input data as shown below in the figure.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/data1.png"><img alt="_images/data1.png" src="_images/data1.png" style="width: 300px;" /></a>
+</div>
+<div class="section" id="satellite-data">
+<h2>Satellite data<a class="headerlink" href="#satellite-data" title="Permalink to this headline">¶</a></h2>
+<p>Currently PySEBAL support data from Landsat 4/5/7/8, MODIS, PROBA-V/VIIRS sensors/satellites.
+In this documentation currently PySEBAL using Landsat data as input is explained. But data from other satellites can be easily used by replacing the Landsat data,</p>
+<div class="section" id="acquiring-landsat-data">
+<h3>Acquiring Landsat data<a class="headerlink" href="#acquiring-landsat-data" title="Permalink to this headline">¶</a></h3>
+<p>The main archive of Landsat satellite (all missions – TM/ETM/OLI) is earth explorer website: <a class="reference external" href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>First step is to create user login for this website so that you are able to download the data.</p>
+</div>
+<p>Let us now search and download data for Miandoab irrigation scheme in Iran for the time period April to September 2018.</p>
+<div class="line-block">
+<div class="line"><strong>Step1</strong></div>
+</div>
+<div class="line-block">
+<div class="line">In the “Search Criteria” tab type in your “address/place” of your interest, in this case “Miandoab” and click “enter” or search for Path/row - 168/034.</div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/ls1.png"><img alt="_images/ls1.png" src="_images/ls1.png" style="width: 300px;" /></a>
+</div>
+<p>Click on the result (red box) and a location popup will appear over on the map.</p>
+<div class="line-block">
+<div class="line"><strong>Step2</strong></div>
+</div>
+<div class="line-block">
+<div class="line">Now enter the date range for which data is required in the same tab.</div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/ls2.png"><img alt="_images/ls2.png" src="_images/ls2.png" style="width: 300px;" /></a>
+</div>
+<div class="line-block">
+<div class="line"><strong>Step3</strong></div>
+</div>
+<div class="line-block">
+<div class="line">Select the datasets you want to search and set the additional criteria of those data with cloud cover less than 20%</div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/ls3.png"><img alt="_images/ls3.png" src="_images/ls3.png" style="width: 300px;" /></a>
+</div>
+<p>Here we are selecting only Landsat 8 data. For previous years you can also try with Landsat 7 ETM, and Landsat 4/5 TM. Finally click the “Results” to see list of all available data with our conditions met for the study area in the given period of time.</p>
+<div class="line-block">
+<div class="line"><strong>Step4</strong></div>
+</div>
+<div class="line-block">
+<div class="line">Check the listed scenes using browse images, select and download the 168/034 scene</div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/ls4.png"><img alt="_images/ls4.png" src="_images/ls4.png" style="width: 300px;" /></a>
+</div>
+<p>The image icon under each result can be used to see the preview of that landsat scene (see Figure above). The download icon can be used to download that single scene with out ordering. While the Bulk download icon can be used to get a single link to download multiple products at a time. More details on bulk download can be found here - <a class="reference external" href="https://www.usgs.gov/media/videos/eros-earthexplorer-how-do-a-bulk-download">https://www.usgs.gov/media/videos/eros-earthexplorer-how-do-a-bulk-download</a>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/ls6.png"><img alt="_images/ls6.png" src="_images/ls6.png" style="width: 300px;" /></a>
+</div>
+<p>For example, image dated 22 June 2018 looks really good, click on the download icon to get the data. You have to login in order to download the data.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/ls5.png"><img alt="_images/ls5.png" src="_images/ls5.png" style="width: 300px;" /></a>
+</div>
+<p>From the list of options download the “Level-1 GeoTIFF Data Product” to get all the spectral bands and metadata of the scene.</p>
+</div>
+<div class="section" id="bulk-download-landsat-data-using-command-line">
+<h3>Bulk download Landsat data using command line<a class="headerlink" href="#bulk-download-landsat-data-using-command-line" title="Permalink to this headline">¶</a></h3>
+<p>This section explains how you can download big amount of Landsat data from Google cloud bucket using command line.</p>
+<div class="line-block">
+<div class="line"><strong>Steps</strong></div>
+</div>
+<ul class="simple">
+<li><p>Install gsutil library - <a class="reference external" href="https://pypi.org/project/gsutil/">https://pypi.org/project/gsutil/</a></p></li>
+<li><p>If you want to list all the Landsat 8 data over Miandoab covering tile 168/034 in June 2018 use the following command:</p></li>
+</ul>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>gsutil ls -d gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_201806*T1
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>To download them, use the following command:</p></li>
+</ul>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># &#39;.&#39; means it will download to present directory</span>
+gsutil -m cp -r gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_201806*T1 .
+</pre></div>
+</td></tr></table></div>
+<p>This <a class="reference external" href="https://shuzhanfan.github.io/2018/05/download-landsat8-data-from-google-cloud/">link</a> has more details on this approach.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="PySEBAL Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright © 2019 IHE Delft Institute for Water Education
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

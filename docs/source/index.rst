@@ -11,4 +11,5 @@ PySEBAL documentation
    :caption: Contents:
    
    installation
+   data
 

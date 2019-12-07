@@ -5,6 +5,8 @@ PySEBAL Installation
    :maxdepth: 2
    :caption: Contents
 
+   data
+
 PySEBAL is a python library to compute Actual EvapoTranspiration (ETa) and other related variables using SEBAL model. Following specifications are recommended to run PySEBAL.
 
 Computing requirements
@@ -49,7 +51,7 @@ Installing dependencies
 | Following steps explain the installation procedure:
 | **Step1 - Download the OSGeo4W installer**
 
-| Get the OSGeo4W installer (https://trac.osgeo.org/osgeo4w/
+| Get the OSGeo4W installer (https://trac.osgeo.org/osgeo4w/)
  from this `link <http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe>`_ (64 bit)
  Or get it from the usb stick provided.
 
