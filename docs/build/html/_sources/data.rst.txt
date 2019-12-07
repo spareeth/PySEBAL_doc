@@ -119,6 +119,17 @@ This section explains how you can download big amount of Landsat data from Googl
 
 This `link <https://shuzhanfan.github.io/2018/05/download-landsat8-data-from-google-cloud/>`_ has more details on this approach.
 
+Naming Convention of downloaded Landsat data
+++++++++++++++++++++++++++++++++++++++++++++
+
+.. figure:: img/ls7.png
+   :align: center
+   :width: 600
+
+   Landsat data naming convention
+
+
+
 .. Meteo data
 .. ==========
 

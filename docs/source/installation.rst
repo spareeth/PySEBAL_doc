@@ -5,8 +5,6 @@ PySEBAL Installation
    :maxdepth: 2
    :caption: Contents
 
-   data
-
 PySEBAL is a python library to compute Actual EvapoTranspiration (ETa) and other related variables using SEBAL model. Following specifications are recommended to run PySEBAL.
 
 Computing requirements
