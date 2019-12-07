@@ -9,7 +9,9 @@ To run PySEBAL we need the following input data as shown below in the figure.
 
 .. figure:: img/data1.png
    :align: center
-   :width: 300
+   :width: 450
+   
+   List of input data required for PySEBAL
 
 Satellite data
 ==============
@@ -36,6 +38,9 @@ Let us now search and download data for Miandoab irrigation scheme in Iran for t
    :align: center
    :width: 300
 
+   Setting the search criteria
+
+
 Click on the result (red box) and a location popup will appear over on the map.
 
 | **Step2**
@@ -46,6 +51,8 @@ Click on the result (red box) and a location popup will appear over on the map.
    :align: center
    :width: 300
 
+   Setting the date range
+
 | **Step3**
 
 | Select the datasets you want to search and set the additional criteria of those data with cloud cover less than 20%
@@ -53,6 +60,8 @@ Click on the result (red box) and a location popup will appear over on the map.
 .. figure:: img/ls3.png
    :align: center
    :width: 300
+
+   Setting additional criteria and listing results
 
 Here we are selecting only Landsat 8 data. For previous years you can also try with Landsat 7 ETM, and Landsat 4/5 TM. Finally click the “Results” to see list of all available data with our conditions met for the study area in the given period of time.
 
@@ -64,17 +73,24 @@ Here we are selecting only Landsat 8 data. For previous years you can also try w
    :align: center
    :width: 300
 
+   List of available landsat 8 data for the given period of time
+
+
 The image icon under each result can be used to see the preview of that landsat scene (see Figure above). The download icon can be used to download that single scene with out ordering. While the Bulk download icon can be used to get a single link to download multiple products at a time. More details on bulk download can be found here - https://www.usgs.gov/media/videos/eros-earthexplorer-how-do-a-bulk-download.
 
 .. figure:: img/ls6.png
    :align: center
-   :width: 300
+   :width: 350
+   
+   Showing the preview image of a landsat scene
 
 For example, image dated 22 June 2018 looks really good, click on the download icon to get the data. You have to login in order to download the data.
 
 .. figure:: img/ls5.png
    :align: center
    :width: 300
+
+   Landsat download options, select the one highlighted
 
 From the list of options download the “Level-1 GeoTIFF Data Product” to get all the spectral bands and metadata of the scene.
 
