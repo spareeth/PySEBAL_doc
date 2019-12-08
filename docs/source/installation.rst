@@ -112,6 +112,23 @@ Installing dependencies
  * tcltk (select both the packages for python 2 & 3)
  | Click "Next" and finish the installation
 
+Setting environment variables
++++++++++++++++++++++++++++++
+
+| **Steps**
+
+* Right click "This PC" in Windows 10 **OR** "My Computer" in windows 7, go to *Properties* -> *Advaced system settings* -> *Advanced* tab -> *Environment variables* -> *System variables*.
+
+* Click new and add four new system variables. Add the **Variable name** and **Variable value** as shown below.
+
+ * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``
+ * **PYTHONPATH** set to ``C:\OSGeo4W64\apps\Python27\Scripts``
+ * **PYTHONHOME** set to ``C:\OSGeo4W64\apps\Python27``
+ * **SEBAL** set to ``C:\OSGeo4W64\bin``
+
+* Edit the variable **Path** in the **System variables** to add the path ``C:\OSGeo4W64\bin`` to the end followed by a semicolon (;) in windows 7 **OR** add this path as a new line in the path variable in Windows 10.
+
+
 | **Step3 - Install additional dependencies**
 
 * In the program menu search for "OSGeo4W Shell" or if you have selected "Create icon on Desktop" option in the previous step, it should be in the desktop. Now open "OSGeo4W Shell"
@@ -128,21 +145,15 @@ Installing dependencies
    pip install setuptools
    pip install openpyxl netCDF4 joblib
 
-Setting environment variables
-+++++++++++++++++++++++++++++
+.. warning::
 
-| **Steps**
+   In case the above installation give ``fatar error`` then please try the following commands.
 
-* Right click "This PC" in Windows 10 **OR** "My Computer" in windows 7, go to *Properties* -> *Advaced system settings* -> *Advanced* tab -> *Environment variables* -> *System variables*.
+.. code-block:: bash
+   :linenos:
 
-* Click new and add four new system variables. Add the **Variable name** and **Variable value** as shown below.
-
- * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``
- * **PYTHONPATH** set to ``C:\OSGeo4W64\apps\Python27\Scripts``
- * **PYTHONHOME** set to ``C:\OSGeo4W64\apps\Python27``
- * **SEBAL** set to ``C:\OSGeo4W64\bin``
-
-* Edit the variable **Path** in the **System variables** to add the path ``C:\OSGeo4W64\bin`` to the end followed by a semicolon (;) in windows 7 **OR** add this path as a new line in the path variable in Windows 10.
+   python -m pip install setuptools
+   python -m pip install openpyxl netCDF4 joblib
 
 Test installation
 +++++++++++++++++
@@ -252,7 +263,6 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
 | Open a OSGeo4W Shell and change the directory to ``D:\PySEBAL_dev\SEBAL`` and follow the commands given below.
 
 | **In Windows**
-
 
 .. code-block:: Shell
    :linenos:

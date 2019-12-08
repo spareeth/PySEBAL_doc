@@ -82,30 +82,15 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="installation.html">PySEBAL Installation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PySEBAL data requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#satellite-data">Satellite data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#acquiring-landsat-data">Acquiring Landsat data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bulk-download-landsat-data-using-command-line">Bulk download Landsat data using command line</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#naming-convention-of-downloaded-landsat-data">Naming Convention of downloaded Landsat data</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#computing-requirements">Computing requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#source-code">Source code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-in-windows">Installation in Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-in-linux">Installation in Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#test-run-pysebal">Test run PySEBAL</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">PySEBAL Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PySEBAL data requirements</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#satellite-data">Satellite data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#acquiring-landsat-data">Acquiring Landsat data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bulk-download-landsat-data-using-command-line">Bulk download Landsat data using command line</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#naming-convention-of-downloaded-landsat-data">Naming Convention of downloaded Landsat data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#naming-convention-of-landsat-data">Naming convention of Landsat data</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#meteo-data">Meteo data</a></li>
 </ul>
 </li>
 </ul>
@@ -152,8 +137,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="installation.html">PySEBAL Installation</a> &raquo;</li>
         
       <li>PySEBAL data requirements</li>
     
@@ -272,13 +255,192 @@ gsutil -m cp -r gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_20
 </td></tr></table></div>
 <p>This <a class="reference external" href="https://shuzhanfan.github.io/2018/05/download-landsat8-data-from-google-cloud/">link</a> has more details on this approach.</p>
 </div>
-<div class="section" id="naming-convention-of-downloaded-landsat-data">
-<h3>Naming Convention of downloaded Landsat data<a class="headerlink" href="#naming-convention-of-downloaded-landsat-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="naming-convention-of-landsat-data">
+<h3>Naming convention of Landsat data<a class="headerlink" href="#naming-convention-of-landsat-data" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="_images/ls7.png"><img alt="_images/ls7.png" src="_images/ls7.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text">Landsat data naming convention</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
+</div>
+<div class="section" id="meteo-data">
+<h2>Meteo data<a class="headerlink" href="#meteo-data" title="Permalink to this headline">¶</a></h2>
+<p>Meteo data is either obtained from field stations or from global models like GLDAS, ERA5, MERRA2 etc.
+Here we will use instantaneous and daily average computed from GLDAS data. You can download 3 hourly GLDAS data from this web link: <a class="reference external" href="https://hydro1.gesdisc.eosdis.nasa.gov/data/GLDAS/GLDAS_NOAH025_3H.2.1/">https://hydro1.gesdisc.eosdis.nasa.gov/data/GLDAS/GLDAS_NOAH025_3H.2.1/</a></p>
+<p>Once downloaded the data, we use GLDAS and GRASS GIS to compute the required meteo parameters for PySEBAL.
+| The GLDAS data is provided in netCDF4 format with number of measured parameters as subdatasets. Let us assume that you have downloaded the GLDAS data for the 6 June 2018 00:00 hours.
+| The file name will be <code class="docutils literal notranslate"><span class="pre">GLDAS_NOAH025_3H.A20180606.0000.021.nc4</span></code>.</p>
+<p>Now let us do all the processing in GLDAS library and GRASS GIS already installed in your system.
+| Open OSGeo4W Shell
+| Type <code class="docutils literal notranslate"><span class="pre">grass78</span> <span class="pre">--gui</span></code> and enter
+| It will open the following interface</p>
+<p>Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. For that follow the commands below:</p>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Start the Linux bash</span>
+ bash
+ <span class="c1"># Set the required path</span>
+ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/c/OSGeo4W64/apps/grass/grass78/scripts:<span class="nv">$HOME</span>/AppData/Roaming/GRASS7/addons/scripts:<span class="nv">$PATH</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now in the command line type in following commands to extract required variables from GLDAS</p>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To see the metadata run the following command</span>
+ gdalinfo GLDAS_NOAH025_3H.A20180606.0000.021.nc4
+ <span class="c1"># To import specific humidity</span>
+ gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.0000.021.nc4&quot;</span>:Qair_f_inst GLDAS_NOAH025_3H_20180606_0000_Qair.tif
+ <span class="c1"># To import Pressure in Pa</span>
+ gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.0000.021.nc4&quot;</span>:Psurf_f_inst GLDAS_NOAH025_3H_20180606_0000_Psurf.tif
+ <span class="c1"># To import air temperature</span>
+ gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.0000.021.nc4&quot;</span>:Tair_f_inst GLDAS_NOAH025_3H_20180606_0000_Tair.tif
+ <span class="c1"># To import Wind speed</span>
+ gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.0000.021.nc4&quot;</span>:Wind_f_inst GLDAS_NOAH025_3H_20180606_0000_Wind.tif
+ <span class="c1"># To import Short wave downward radiation</span>
+ gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.0000.021.nc4&quot;</span>:SWdown_f_tavg GLDAS_NOAH025_3H_20180606_0000_SWdown.tif
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line">Now we have to import these <code class="docutils literal notranslate"><span class="pre">tif</span></code> files into GRASS GIS</div>
+<div class="line">Following commands will import the files into GRASS GIS</div>
+</div>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To import all the above tif files</span>
+ r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Qair.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Qair -o --o
+ r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Psurf.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Psurf -o --o
+ r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Tair.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Tair -o --o
+ r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Wind.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Wind -o --o
+ r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_SWdown.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_SWdown -o --o
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line">Now we have to do three major Steps</div>
+</div>
+<ul class="simple">
+<li><p>Convert airtemperature in kelvin to Deg C.</p></li>
+<li><p>Convert Pressure in Pa to Milli bar (Mb)</p></li>
+<li><p>Convert Specific humidity to relative humidity following the description <a class="reference external" href="https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity/">here</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line">Run the following commands to do the conversions:</div>
+</div>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_0000_Tair_deg = GLDAS_NOAH025_3H_20180606_0000_Tair - 273.15&quot;</span> --o
+     <span class="c1">## Pressure convert from pa to mb</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_0000_Psurf_mb = GLDAS_NOAH025_3H_20180606_0000_Psurf / 100&quot;</span> --o
+     <span class="c1">## Humidity according to the url: https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity</span>
+ <span class="c1"># Saturation vapour pressure</span>
+ r.mapcalc <span class="s2">&quot;es = 6.112 * exp((17.67 * GLDAS_NOAH025_3H_20180606_0000_Tair_deg) / (GLDAS_NOAH025_3H_20180606_0000_Tair_deg + 243.5))&quot;</span> --o
+ <span class="c1"># vapour pressure</span>
+ r.mapcalc <span class="s2">&quot;e = (GLDAS_NOAH025_3H_20180606_0000_Qair * GLDAS_NOAH025_3H_20180606_0000_Psurf_mb) / (0.378 * GLDAS_NOAH025_3H_20180606_0000_Qair + 0.622)&quot;</span> --o
+ <span class="c1"># Calculate Relative humidity</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_0000_Rh1 = (e / es) * 100&quot;</span> --o
+ <span class="c1"># Remove outliers</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_0000_Rh = float(if(GLDAS_NOAH025_3H_20180606_0000_Rh1 &gt; 100, 100, if(GLDAS_NOAH025_3H_20180606_0000_Rh1 &lt; 0, 0, GLDAS_NOAH025_3H_20180606_0000_Rh1)))&quot;</span> --o
+</pre></div>
+</td></tr></table></div>
+<p>Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.0300.021.nc4, GLDAS_NOAH025_3H.A20180606.0600.021.nc4, GLDAS_NOAH025_3H.A20180606.0900.021.nc4, GLDAS_NOAH025_3H.A20180606.1200.021.nc4, GLDAS_NOAH025_3H.A20180606.1500.021.nc4, GLDAS_NOAH025_3H.A20180606.1800.021.nc4, GLDAS_NOAH025_3H.A20180606.2100.021.nc4</p>
+<div class="line-block">
+<div class="line">Now let us create instantaneous and daily averages:</div>
+<div class="line">For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30.</div>
+</div>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature instantaneous</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_Tair_inst = GLDAS_NOAH025_3H_20180606_0900_Tair_deg&quot;</span>
+ <span class="c1">## Shortwave radiation instantaneous</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_SWdown_inst = GLDAS_NOAH025_3H_20180606_0900_SWdown&quot;</span>
+ <span class="c1">## Wind speed instantaneous</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_Wind_inst = GLDAS_NOAH025_3H_20180606_0900_Wind&quot;</span>
+ <span class="c1">## Relative humidity instantaneous</span>
+ r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_Rh_inst = GLDAS_NOAH025_3H_20180606_0900_Rh&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line">Next calculate the daily averages</div>
+</div>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature daily average</span>
+ <span class="nv">MAPS1</span><span class="o">=</span><span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_*_Tair_deg$ <span class="nv">sep</span><span class="o">=</span>, <span class="nv">map</span><span class="o">=</span>.<span class="p">|</span>cat<span class="sb">`</span>
+ r.series <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">MAPS1</span><span class="si">}</span> <span class="nv">output</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_Tair_24 <span class="nv">method</span><span class="o">=</span>average
+ <span class="c1">## Short wave radiation daily average</span>
+ <span class="nv">MAPS2</span><span class="o">=</span><span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_*_SWdown$ <span class="nv">sep</span><span class="o">=</span>, <span class="nv">map</span><span class="o">=</span>.<span class="p">|</span>cat<span class="sb">`</span>
+ r.series <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">MAPS2</span><span class="si">}</span> <span class="nv">output</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_SWdown_24 <span class="nv">method</span><span class="o">=</span>average
+ <span class="c1">## Wind daily average</span>
+ <span class="nv">MAPS3</span><span class="o">=</span><span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_*_Wind$ <span class="nv">sep</span><span class="o">=</span>, <span class="nv">map</span><span class="o">=</span>.<span class="p">|</span>cat<span class="sb">`</span>
+ r.series <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">MAPS3</span><span class="si">}</span> <span class="nv">output</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_Wind_24 <span class="nv">method</span><span class="o">=</span>average
+ <span class="c1">## Relative humidity daily average</span>
+ <span class="nv">MAPS4</span><span class="o">=</span><span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_*_Rh$ <span class="nv">sep</span><span class="o">=</span>, <span class="nv">map</span><span class="o">=</span>.<span class="p">|</span>cat<span class="sb">`</span>
+ r.series <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">MAPS4</span><span class="si">}</span> <span class="nv">output</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_Rh_24 <span class="nv">method</span><span class="o">=</span>average
+</pre></div>
+</td></tr></table></div>
+<p>Now let us resample the instantaneous and daily averaged to avoid pixel effects</p>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Set the region with require resolution</span>
+ g.region <span class="nv">vect</span><span class="o">=</span>study_area_big <span class="nv">res</span><span class="o">=</span><span class="m">0</span>.0625 -a
+ <span class="c1">## For loop to resample all the instantaneous maps</span>
+ <span class="k">for</span> i in <span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>*inst$ <span class="nv">map</span><span class="o">=</span>.<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+     r.resamp.bspline <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">method</span><span class="o">=</span>bicubic --o
+     r.out.gdal <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp.tif --o
+ <span class="k">done</span>
+ <span class="c1">## For loop to resample all the daily averages maps</span>
+ <span class="k">for</span> i in <span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>*24$ <span class="nv">map</span><span class="o">=</span>.<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+     r.resamp.bspline <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">method</span><span class="o">=</span>bicubic --o
+     r.out.gdal <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp.tif --o
+ <span class="k">done</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 

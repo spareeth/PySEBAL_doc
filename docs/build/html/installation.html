@@ -297,23 +297,6 @@ Or get it from the usb stick provided.</div>
 <div class="line">Click “Next” and finish the installation</div>
 </div>
 </div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Step3 - Install additional dependencies</strong></div>
-</div>
-<ul class="simple">
-<li><p>In the program menu search for “OSGeo4W Shell” or if you have selected “Create icon on Desktop” option in the previous step, it should be in the desktop. Now open “OSGeo4W Shell”</p></li>
-</ul>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="_images/shell1.png"><img alt="_images/shell1.png" src="_images/shell1.png" style="width: 200px;" /></a>
-</div>
-<ul class="simple">
-<li><p>In the OSGeo4W Shell type in the following commands to install packages - <em>setuptools, openpyxl, netCDF4, joblib</em></p></li>
-</ul>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip install setuptools
-pip install openpyxl netCDF4 joblib
-</pre></div>
-</td></tr></table></div>
 </div>
 <div class="section" id="setting-environment-variables">
 <h3>Setting environment variables<a class="headerlink" href="#setting-environment-variables" title="Permalink to this headline">¶</a></h3>
@@ -335,6 +318,32 @@ pip install openpyxl netCDF4 joblib
 <ul class="simple">
 <li><p>Edit the variable <strong>Path</strong> in the <strong>System variables</strong> to add the path <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code> to the end followed by a semicolon (;) in windows 7 <strong>OR</strong> add this path as a new line in the path variable in Windows 10.</p></li>
 </ul>
+<div class="line-block">
+<div class="line"><strong>Step3 - Install additional dependencies</strong></div>
+</div>
+<ul class="simple">
+<li><p>In the program menu search for “OSGeo4W Shell” or if you have selected “Create icon on Desktop” option in the previous step, it should be in the desktop. Now open “OSGeo4W Shell”</p></li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/shell1.png"><img alt="_images/shell1.png" src="_images/shell1.png" style="width: 200px;" /></a>
+</div>
+<ul class="simple">
+<li><p>In the OSGeo4W Shell type in the following commands to install packages - <em>setuptools, openpyxl, netCDF4, joblib</em></p></li>
+</ul>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip install setuptools
+pip install openpyxl netCDF4 joblib
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In case the above installation give <code class="docutils literal notranslate"><span class="pre">fatar</span> <span class="pre">error</span></code> then please try the following commands.</p>
+</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip install setuptools
+python -m pip install openpyxl netCDF4 joblib
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="test-installation">
 <h3>Test installation<a class="headerlink" href="#test-installation" title="Permalink to this headline">¶</a></h3>

@@ -119,7 +119,7 @@ This section explains how you can download big amount of Landsat data from Googl
 
 This `link <https://shuzhanfan.github.io/2018/05/download-landsat8-data-from-google-cloud/>`_ has more details on this approach.
 
-Naming Convention of downloaded Landsat data
+Naming convention of Landsat data
 ++++++++++++++++++++++++++++++++++++++++++++
 
 .. figure:: img/ls7.png
@@ -130,11 +130,138 @@ Naming Convention of downloaded Landsat data
 
 
 
-.. Meteo data
-.. ==========
+Meteo data
+==========
 
-.. Meteo data is either obtained from field stations or from global models like GLDAS, ERA5, MERRA2 etc. 
+Meteo data is either obtained from field stations or from global models like GLDAS, ERA5, MERRA2 etc.
+Here we will use instantaneous and daily average computed from GLDAS data. You can download 3 hourly GLDAS data from this web link: https://hydro1.gesdisc.eosdis.nasa.gov/data/GLDAS/GLDAS_NOAH025_3H.2.1/
 
+Once downloaded the data, we use GLDAS and GRASS GIS to compute the required meteo parameters for PySEBAL.
+| The GLDAS data is provided in netCDF4 format with number of measured parameters as subdatasets. Let us assume that you have downloaded the GLDAS data for the 6 June 2018 00:00 hours.
+| The file name will be ``GLDAS_NOAH025_3H.A20180606.0000.021.nc4``.
+
+Now let us do all the processing in GLDAS library and GRASS GIS already installed in your system.
+| Open OSGeo4W Shell
+| Type ``grass78 --gui`` and enter
+| It will open the following interface
+
+Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. For that follow the commands below:
+
+.. code-block:: Shell
+   :linenos:
+
+    # Start the Linux bash
+    bash
+    # Set the required path
+    export PATH=/c/OSGeo4W64/apps/grass/grass78/scripts:$HOME/AppData/Roaming/GRASS7/addons/scripts:$PATH
+
+Now in the command line type in following commands to extract required variables from GLDAS
+
+.. code-block:: Shell
+   :linenos:
+
+    # To see the metadata run the following command
+    gdalinfo GLDAS_NOAH025_3H.A20180606.0000.021.nc4
+    # To import specific humidity
+    gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.0000.021.nc4":Qair_f_inst GLDAS_NOAH025_3H_20180606_0000_Qair.tif
+    # To import Pressure in Pa
+    gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.0000.021.nc4":Psurf_f_inst GLDAS_NOAH025_3H_20180606_0000_Psurf.tif
+    # To import air temperature
+    gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.0000.021.nc4":Tair_f_inst GLDAS_NOAH025_3H_20180606_0000_Tair.tif
+    # To import Wind speed
+    gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.0000.021.nc4":Wind_f_inst GLDAS_NOAH025_3H_20180606_0000_Wind.tif
+    # To import Short wave downward radiation
+    gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.0000.021.nc4":SWdown_f_tavg GLDAS_NOAH025_3H_20180606_0000_SWdown.tif
+
+| Now we have to import these ``tif`` files into GRASS GIS
+| Following commands will import the files into GRASS GIS
+
+.. code-block:: Shell
+   :linenos:
+
+    # To import all the above tif files
+    r.import.py in=GLDAS_NOAH025_3H_20180606_0000_Qair.tif out=GLDAS_NOAH025_3H_20180606_0000_Qair -o --o
+    r.import.py in=GLDAS_NOAH025_3H_20180606_0000_Psurf.tif out=GLDAS_NOAH025_3H_20180606_0000_Psurf -o --o
+    r.import.py in=GLDAS_NOAH025_3H_20180606_0000_Tair.tif out=GLDAS_NOAH025_3H_20180606_0000_Tair -o --o
+    r.import.py in=GLDAS_NOAH025_3H_20180606_0000_Wind.tif out=GLDAS_NOAH025_3H_20180606_0000_Wind -o --o
+    r.import.py in=GLDAS_NOAH025_3H_20180606_0000_SWdown.tif out=GLDAS_NOAH025_3H_20180606_0000_SWdown -o --o
+
+| Now we have to do three major Steps
+* Convert airtemperature in kelvin to Deg C.
+* Convert Pressure in Pa to Milli bar (Mb)
+* Convert Specific humidity to relative humidity following the description `here <https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity/>`_ 
+
+| Run the following commands to do the conversions:
+
+.. code-block:: Shell
+   :linenos:
+    
+    ## Air temperature
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_0000_Tair_deg = GLDAS_NOAH025_3H_20180606_0000_Tair - 273.15" --o
+	## Pressure convert from pa to mb
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_0000_Psurf_mb = GLDAS_NOAH025_3H_20180606_0000_Psurf / 100" --o
+	## Humidity according to the url: https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity
+    # Saturation vapour pressure
+    r.mapcalc "es = 6.112 * exp((17.67 * GLDAS_NOAH025_3H_20180606_0000_Tair_deg) / (GLDAS_NOAH025_3H_20180606_0000_Tair_deg + 243.5))" --o
+    # vapour pressure
+    r.mapcalc "e = (GLDAS_NOAH025_3H_20180606_0000_Qair * GLDAS_NOAH025_3H_20180606_0000_Psurf_mb) / (0.378 * GLDAS_NOAH025_3H_20180606_0000_Qair + 0.622)" --o 
+    # Calculate Relative humidity
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_0000_Rh1 = (e / es) * 100" --o
+    # Remove outliers
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_0000_Rh = float(if(GLDAS_NOAH025_3H_20180606_0000_Rh1 > 100, 100, if(GLDAS_NOAH025_3H_20180606_0000_Rh1 < 0, 0, GLDAS_NOAH025_3H_20180606_0000_Rh1)))" --o
+
+Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.0300.021.nc4, GLDAS_NOAH025_3H.A20180606.0600.021.nc4, GLDAS_NOAH025_3H.A20180606.0900.021.nc4, GLDAS_NOAH025_3H.A20180606.1200.021.nc4, GLDAS_NOAH025_3H.A20180606.1500.021.nc4, GLDAS_NOAH025_3H.A20180606.1800.021.nc4, GLDAS_NOAH025_3H.A20180606.2100.021.nc4
+
+| Now let us create instantaneous and daily averages:
+| For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30.
+
+.. code-block:: Shell
+   :linenos:
+    
+    ## Air temperature instantaneous
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_Tair_inst = GLDAS_NOAH025_3H_20180606_0900_Tair_deg"
+    ## Shortwave radiation instantaneous 
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_SWdown_inst = GLDAS_NOAH025_3H_20180606_0900_SWdown"
+    ## Wind speed instantaneous
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_Wind_inst = GLDAS_NOAH025_3H_20180606_0900_Wind"
+    ## Relative humidity instantaneous
+    r.mapcalc "GLDAS_NOAH025_3H_20180606_Rh_inst = GLDAS_NOAH025_3H_20180606_0900_Rh"
+
+| Next calculate the daily averages
+
+.. code-block:: Shell
+   :linenos:
+    
+    ## Air temperature daily average
+    MAPS1=`g.list rast pattern=GLDAS_NOAH025_3H_20180606_*_Tair_deg$ sep=, map=.|cat`
+    r.series input=${MAPS1} output=GLDAS_NOAH025_3H_20180606_Tair_24 method=average
+    ## Short wave radiation daily average
+    MAPS2=`g.list rast pattern=GLDAS_NOAH025_3H_20180606_*_SWdown$ sep=, map=.|cat`
+    r.series input=${MAPS2} output=GLDAS_NOAH025_3H_20180606_SWdown_24 method=average
+    ## Wind daily average
+    MAPS3=`g.list rast pattern=GLDAS_NOAH025_3H_20180606_*_Wind$ sep=, map=.|cat`
+    r.series input=${MAPS3} output=GLDAS_NOAH025_3H_20180606_Wind_24 method=average
+    ## Relative humidity daily average
+    MAPS4=`g.list rast pattern=GLDAS_NOAH025_3H_20180606_*_Rh$ sep=, map=.|cat`
+    r.series input=${MAPS4} output=GLDAS_NOAH025_3H_20180606_Rh_24 method=average
+
+Now let us resample the instantaneous and daily averaged to avoid pixel effects
+
+.. code-block:: Shell
+   :linenos:
+    
+    ## Set the region with require resolution
+    g.region vect=study_area_big res=0.0625 -a
+    ## For loop to resample all the instantaneous maps
+    for i in `g.list rast pattern=*inst$ map=.`; do 
+        r.resamp.bspline in=${i} out=${i}_interp method=bicubic --o
+        r.out.gdal in=${i}_interp out=${i}_interp.tif --o
+    done
+    ## For loop to resample all the daily averages maps
+    for i in `g.list rast pattern=*24$ map=.`; do 
+        r.resamp.bspline in=${i} out=${i}_interp method=bicubic --o
+        r.out.gdal in=${i}_interp out=${i}_interp.tif --o
+    done
 
 .. Soil hydraulic properties data
 .. ==============================
