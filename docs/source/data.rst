@@ -153,7 +153,7 @@ Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4
     # Start the Linux bash
     bash
     # Set the required path
-    export PATH=/c/OSGeo4W64/apps/grass/grass78/scripts:$HOME/AppData/Roaming/GRASS7/addons/scripts:$PATH
+    export PATH=/c/OSGeo4W64/bin:/c/OSGeo4W64/apps/grass/grass78/scripts:$HOME/AppData/Roaming/GRASS7/addons/scripts:$PATH
 
 Now in the command line type in following commands to extract required variables from GLDAS
 
