@@ -1,10 +1,6 @@
 PySEBAL input data arrangement
 ******************************
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 Let us now arrange all the data we prepared to Run PySEBAL and prepare a input excel sheet.
 
 Assuming that you have following folder structure (recommended) for input data:

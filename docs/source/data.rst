@@ -1,10 +1,6 @@
 PySEBAL data requirements
 *************************
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents
-
 To run PySEBAL we need the following input data as shown below in the figure.
 
 .. figure:: img/data1.png
@@ -127,8 +123,6 @@ Naming convention of Landsat data
    :width: 600
 
    Landsat data naming convention
-
-
 
 Meteo data
 ==========
