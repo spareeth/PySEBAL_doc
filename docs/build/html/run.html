@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PySEBAL input data arrangement &mdash; PySEBAL_doc 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PySEBAL data requirements" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PySEBAL_doc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">PySEBAL Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PySEBAL input data arrangement</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySEBAL_doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>PySEBAL input data arrangement</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/run.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pysebal-input-data-arrangement">
+<h1>PySEBAL input data arrangement<a class="headerlink" href="#pysebal-input-data-arrangement" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Let us now arrange all the data we prepared to Run PySEBAL and prepare a input excel sheet.</p>
+<p>Assuming that you have following folder structure (recommended) for input data:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/folder.png"><img alt="_images/folder.png" src="_images/folder.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Folder structure of input data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open the excel sheet provided to you - <code class="docutils literal notranslate"><span class="pre">InputEXCEL_v3_3_7_WIN.xlsx</span></code>, you can also download it <a class="reference external" href="http://scientificpubs.com/misc/InputEXCEL_v3_3_7_WIN.xlsx">here</a>
+Make necessary changes to the excel sheet as listed below.</p>
+<p><strong>Sheet 1: General Input</strong></p>
+<ul class="simple">
+<li><p><strong>InputMap</strong> - set the path to your satellite data</p></li>
+<li><p><strong>OutputMap</strong> - Where you want to save PySEBAL outputs (if not existing, PySEBAL will create the folder)</p></li>
+<li><p><strong>Image_type</strong> - satellite type</p></li>
+<li><p><strong>NameDEM</strong> - set the path to DEM file (Note that you need to provide the file name with extension(.tif))</p></li>
+</ul>
+<p><strong>Sheet 2: Meteo_Input</strong></p>
+<ul class="simple">
+<li><p><strong>Temp_inst</strong> - set the path to instantaneous air temperature (including file name and extension)</p></li>
+<li><p><strong>Temp_24</strong> - set the path to daily average air temperature (including file name and extension)</p></li>
+<li><p><strong>RH_inst</strong> - set the path to instantaneous Relative humidity (including file name and extension)</p></li>
+<li><p><strong>RH_24</strong> - set the path to daily average Relative humidity (including file name and extension)</p></li>
+<li><p><strong>Wind_inst</strong> - set the path to instantaneous wind speed (including file name and extension)</p></li>
+<li><p><strong>Wind_24</strong> - set the path to daily average wind speed (including file name and extension)</p></li>
+<li><p><strong>Rs_inst</strong> - set the path to instantaneous downward shortwave radiation (including file name and extension)</p></li>
+<li><p><strong>Rs_24</strong> - set the path to daily downward shortwave radiation (including file name and extension)</p></li>
+</ul>
+<p><strong>Sheet 3: Soil_Input</strong></p>
+<ul class="simple">
+<li><p><strong>Saturated soil moisture content</strong> - set the path with filename and extension</p></li>
+<li><p><strong>Saturated soil moisture content subsoil</strong> - set the path with filename and extension</p></li>
+<li><p><strong>Residual soil moisture content</strong> - set the path with filename and extension</p></li>
+<li><p><strong>Residual soil moisture content subsoil</strong> - set the path with filename and extension</p></li>
+<li><p><strong>Field_Capacity</strong> - set the path with filename and extension</p></li>
+<li><p><strong>Wilting point</strong> - set the path with filename and extension</p></li>
+</ul>
+<p><strong>Sheet 4: Landsat_Input</strong></p>
+<ul class="simple">
+<li><p><strong>Name Landsat Image</strong> - Name of the landsat image bands (for example without <code class="docutils literal notranslate"><span class="pre">_B1.TIF</span></code>)</p></li>
+<li><p><strong>Landsat Number</strong> - 4/5/7/8 depending which landsat</p></li>
+<li><p><strong>Bands Thermal</strong> - 1/2, In case of Landsat 8, it is 2</p></li>
+<li><p><strong>tscold_min</strong> - Min temperature value to detect cold pixels from DEM corrected surface temperature</p></li>
+<li><p><strong>tscold_max</strong> - Max temperature value to detect cold pixels from DEM corrected surface temperature</p></li>
+<li><p><strong>ndvihot_low</strong> - Min NDVI value to pick the hot pixel</p></li>
+<li><p><strong>ndvihot_high</strong> - Max NDVI value to pick the hot pixel</p></li>
+<li><p><strong>temp_lapse_rate</strong> - Temperature lapse rate for correction of surface temperature</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.</p>
+</div>
+<p>Once the input excel sheet is ready, open the Run SEBAL python file which is in <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> folder.
+* If you are running in python 2 - the file is <code class="docutils literal notranslate"><span class="pre">Run_py2.py</span></code>
+* If you are running in python 3 - the file is <code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code></p>
+<p>Assuming that you are using python 2, open <code class="docutils literal notranslate"><span class="pre">Run_py2.py</span></code> in Notepadd++.</p>
+<p><strong>Edits in Run_py2 file</strong></p>
+<p>We need to make following changes in this file:</p>
+<ul class="simple">
+<li><p><strong>Line 15</strong> - Set the path to prepared excel sheet</p></li>
+<li><p><strong>Line 16</strong> - There are two modes CALIB/RUN. First run <strong>CALIB</strong> and then after setting the thresholds run in <strong>RUN</strong> mode.</p></li>
+<li><p><strong>Line 17/18</strong> -Set start and end row numbers for running all the landsat images in one go.</p></li>
+</ul>
+<p>Once you made the changes save and close the file <code class="docutils literal notranslate"><span class="pre">Run_py2</span></code></p>
+<p>Now open <strong>new</strong> <strong>OSGeo4W Shell</strong> and cd to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\SEBAL</span></code> folder and run the following command.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py2</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>CALIB/RUN mode - setting the thresholds</strong></p>
+<p>In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max thresholds for cold and hot pixels. If you are fine with the default values, you can go ahead with the <strong>RUN</strong> mode. But if you want to set the thresholds for Landsat data separately, then running first in <strong>CALIB</strong> mode is ideal.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds.</p>
+</div>
+<p>Once PySEBAL finish in “CALIB” mode we can compute the thresholds using the following commands.
+Open GRASS GIS in UTM location, in this case UTM38N, create a new location with <code class="docutils literal notranslate"><span class="pre">study_area.shp</span></code> file as the georeferenced file. Make a new mapset if you don’t have one. This mapset in UTM38N location can be used for further analysis of ETa outputs.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Open grass gis</span>
+<span class="n">grass78</span> <span class="o">--</span><span class="n">gui</span>
+<span class="c1"># Open bash</span>
+<span class="n">bash</span>
+<span class="c1"># check the region</span>
+<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="o">-</span><span class="n">p</span>
+<span class="c1"># set the resolution of the region to 30m</span>
+<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="n">res</span><span class="o">=</span><span class="mi">30</span> <span class="o">-</span><span class="n">a</span>
+<span class="c1"># Now change directory to PySEBAL output directory set in excel sheet</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">d</span><span class="o">/</span><span class="n">FAO_Training_Dec2019</span><span class="o">/</span><span class="n">PySEBAL_output</span><span class="o">/</span><span class="n">LC08_L1TP_168034_20180622_20180703_01_T1</span>
+<span class="c1"># Import the corrected surface temperature to this mapset</span>
+<span class="n">r</span><span class="o">.</span><span class="n">import</span><span class="o">.</span><span class="n">py</span> <span class="n">Output_thermal</span><span class="o">/</span><span class="n">L8_ts_dem_30m_2018_06_06_157</span><span class="o">.</span><span class="n">tif</span> <span class="n">output</span><span class="o">=</span><span class="n">ts_20180606</span>
+<span class="c1"># Import the NDVI to this mapset</span>
+<span class="n">r</span><span class="o">.</span><span class="n">import</span><span class="o">.</span><span class="n">py</span> <span class="n">Output_vegetation</span><span class="o">/</span><span class="n">L8_NDVI_30m_2018_06_06_157</span><span class="o">.</span><span class="n">tif</span> <span class="n">output</span><span class="o">=</span><span class="n">ndvi_20180606</span>
+<span class="c1"># Check for cold pixel thresholds from corrected surface temp</span>
+<span class="n">r</span><span class="o">.</span><span class="n">univar</span> <span class="o">-</span><span class="n">e</span> <span class="n">ts_20180606</span> <span class="n">percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span>
+<span class="n">r</span><span class="o">.</span><span class="n">univar</span> <span class="o">-</span><span class="n">e</span> <span class="n">ndvi_20180606</span> <span class="n">percentile</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span>
+</pre></div>
+</td></tr></table></div>
+<p>Once you get the thresholds update the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet, update the <strong>Run_py2</strong> line number 16 to <strong>RUN</strong> mode and run pySEBAL again for final results.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="data.html" class="btn btn-neutral float-left" title="PySEBAL data requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright © 2019 IHE Delft Institute for Water Education
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

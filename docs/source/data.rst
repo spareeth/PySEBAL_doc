@@ -136,24 +136,38 @@ Meteo data
 Meteo data is either obtained from field stations or from global models like GLDAS, ERA5, MERRA2 etc.
 Here we will use instantaneous and daily average computed from GLDAS data. You can download 3 hourly GLDAS data from this web link: https://hydro1.gesdisc.eosdis.nasa.gov/data/GLDAS/GLDAS_NOAH025_3H.2.1/
 
-Once downloaded the data, we use GLDAS and GRASS GIS to compute the required meteo parameters for PySEBAL.
+| Once downloaded the data, we use GDAL and GRASS GIS to compute the required meteo parameters for PySEBAL.
+
 | The GLDAS data is provided in netCDF4 format with number of measured parameters as subdatasets. Let us assume that you have downloaded the GLDAS data for the 6 June 2018 00:00 hours.
+
 | The file name will be ``GLDAS_NOAH025_3H.A20180606.0000.021.nc4``.
 
-Now let us do all the processing in GLDAS library and GRASS GIS already installed in your system.
-| Open OSGeo4W Shell
+Now let us do all the processing in GDAL library and GRASS GIS already installed in your system.
+
+| Open **OSGeo4W Shell**
 | Type ``grass78 --gui`` and enter
 | It will open the following interface
 
-Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. For that follow the commands below:
+.. figure:: img/grass1.png
+   :align: center
+   :width: 400
+
+   GRASS GIS start window, set DB, Location and Mapset here.
+
+| For an introduction to GRASS GIS see this `presentation <https://gitpitch.com/veroandreo/grass_opengeohub2019/master?p=slides/intro>`_.
+
+Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this `file <http://scientificpubs.com/misc/.bashrc>`_ and save in ``echo $HOME`` folder. Please change line no: 22 in this file ``.bashrc`` only the ``/c/OSGeo4W64/apps/grass/grass78/scripts`` to same path in your computer. 
 
 .. code-block:: Shell
    :linenos:
 
     # Start the Linux bash
     bash
-    # Set the required path
-    export PATH=/c/OSGeo4W64/bin:/c/OSGeo4W64/apps/grass/grass78/scripts:$HOME/AppData/Roaming/GRASS7/addons/scripts:$PATH
+
+.. warning::
+
+   In the export path above, adapt your path accordingly. If your OSGeo4W installation is elsewhere, make changes accordingly.
+
 
 Now in the command line type in following commands to extract required variables from GLDAS
 
@@ -173,8 +187,22 @@ Now in the command line type in following commands to extract required variables
     # To import Short wave downward radiation
     gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.0000.021.nc4":SWdown_f_tavg GLDAS_NOAH025_3H_20180606_0000_SWdown.tif
 
+** How to do the above set of commands using a ``for`` loop **
+
+.. code-block:: Shell
+   :linenos:
+
+    # To convert the Wind speed parameter for a day every three hours data, means 8 tif files for wind speed a day
+    for i in "00" "03" "06" "09" "12" "15" "18" "21"; do
+        gdal_translate NETCDF:"GLDAS_NOAH025_3H.A20180606.${i}00.021.nc4":Qair_f_inst GLDAS_NOAH025_3H_20180606_${i}00_Qair.tif
+    done
+    # Now repeat it for all the 6 parameters required for PySEBAL for both dates - 06 June 2019 and 22 June 2019
+
+
+
 | Now we have to import these ``tif`` files into GRASS GIS
 | Following commands will import the files into GRASS GIS
+
 
 .. code-block:: Shell
    :linenos:
@@ -185,6 +213,25 @@ Now in the command line type in following commands to extract required variables
     r.import.py in=GLDAS_NOAH025_3H_20180606_0000_Tair.tif out=GLDAS_NOAH025_3H_20180606_0000_Tair -o --o
     r.import.py in=GLDAS_NOAH025_3H_20180606_0000_Wind.tif out=GLDAS_NOAH025_3H_20180606_0000_Wind -o --o
     r.import.py in=GLDAS_NOAH025_3H_20180606_0000_SWdown.tif out=GLDAS_NOAH025_3H_20180606_0000_SWdown -o --o
+
+.. note::
+
+   Try to do the above commands and the following commands using ``for`` loop
+
+
+
+Let us set the Computational region in GRASS GIS so that rest of all the analysis compute only in our study area
+
+.. code-block:: Shell
+   :linenos:
+
+    # To set the computational region
+    g.region res=0.25 -a
+    g.region -p
+
+.. warning::
+
+   Always start your GRASS GIS work with checking the ``g.region -p`` to make sure about the computational region and resolution.
 
 | Now we have to do three major Steps
 * Convert airtemperature in kelvin to Deg C.
@@ -210,7 +257,16 @@ Now in the command line type in following commands to extract required variables
     # Remove outliers
     r.mapcalc "GLDAS_NOAH025_3H_20180606_0000_Rh = float(if(GLDAS_NOAH025_3H_20180606_0000_Rh1 > 100, 100, if(GLDAS_NOAH025_3H_20180606_0000_Rh1 < 0, 0, GLDAS_NOAH025_3H_20180606_0000_Rh1)))" --o
 
-Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.0300.021.nc4, GLDAS_NOAH025_3H.A20180606.0600.021.nc4, GLDAS_NOAH025_3H.A20180606.0900.021.nc4, GLDAS_NOAH025_3H.A20180606.1200.021.nc4, GLDAS_NOAH025_3H.A20180606.1500.021.nc4, GLDAS_NOAH025_3H.A20180606.1800.021.nc4, GLDAS_NOAH025_3H.A20180606.2100.021.nc4
+.. note::
+
+   How to do above set of commands in a single run using ``for`` loop ??
+
+
+
+Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.0300.021.nc4, GLDAS_NOAH025_3H.A20180606.0600.021.nc4, GLDAS_NOAH025_3H.A20180606.0900.021.nc4, GLDAS_NOAH025_3H.A20180606.1200.021.nc4, GLDAS_NOAH025_3H.A20180606.1500.021.nc4, GLDAS_NOAH025_3H.A20180606.1800.021.nc4, GLDAS_NOAH025_3H.A20180606.2100.021.nc4 
+
+| Using single commands **OR** combine jobs using ``for`` loop
+
 
 | Now let us create instantaneous and daily averages:
 | For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30.
@@ -226,6 +282,11 @@ Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.03
     r.mapcalc "GLDAS_NOAH025_3H_20180606_Wind_inst = GLDAS_NOAH025_3H_20180606_0900_Wind"
     ## Relative humidity instantaneous
     r.mapcalc "GLDAS_NOAH025_3H_20180606_Rh_inst = GLDAS_NOAH025_3H_20180606_0900_Rh"
+
+.. note::
+
+   How to do above set of commands in a single run using ``for`` loop ??
+
 
 | Next calculate the daily averages
 
@@ -245,13 +306,19 @@ Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.03
     MAPS4=`g.list rast pattern=GLDAS_NOAH025_3H_20180606_*_Rh$ sep=, map=.|cat`
     r.series input=${MAPS4} output=GLDAS_NOAH025_3H_20180606_Rh_24 method=average
 
-Now let us resample the instantaneous and daily averaged to avoid pixel effects
+.. note::
+
+   How to do above set of commands in a single run using ``for`` loop ??
+
+Now let us **resample** the instantaneous and daily averaged to avoid pixel effects and **export** the prepared raster maps to tif files for PySEBAL to read and process Landsat data.
 
 .. code-block:: Shell
    :linenos:
     
     ## Set the region with require resolution
     g.region vect=study_area_big res=0.0625 -a
+    ## change directory to output folder
+    cd /to/the/folder/you/want/to/store/meteo/data
     ## For loop to resample all the instantaneous maps
     for i in `g.list rast pattern=*inst$ map=.`; do 
         r.resamp.bspline in=${i} out=${i}_interp method=bicubic --o
@@ -262,6 +329,15 @@ Now let us resample the instantaneous and daily averaged to avoid pixel effects
         r.resamp.bspline in=${i} out=${i}_interp method=bicubic --o
         r.out.gdal in=${i}_interp out=${i}_interp.tif --o
     done
+
+**Some usful GRASS GIS documentation and links:**
+
+* `Module documentation <https://grass.osgeo.org/grass78/manuals/index.html/>`_ 
+* `GRASS GIS Wiki <https://grasswiki.osgeo.org/wiki/GRASS-Wiki/>`_ 
+* `GRASS intro workshop held at NCSU <https://ncsu-osgeorel.github.io/grass-intro-workshop/>`_ 
+* `GRASS GIS course in Jena 2018 <https://training.gismentors.eu/grass-gis-workshop-jena-2018/index.html/>`_ 
+* `GRASS GIS course IRSAE 2018 <https://training.gismentors.eu/grass-gis-irsae-winter-course-2018/index.html>`_
+* `GRASS GIS course in Argentina 2018 <https://training.gismentors.eu/grass-gis-irsae-winter-course-2018/index.html>`_
 
 .. Soil hydraulic properties data
 .. ==============================

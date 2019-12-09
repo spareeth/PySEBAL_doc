@@ -21,7 +21,7 @@
 
 project = u'PySEBAL_doc'
 copyright = u'2019, Sajid Pareeth'
-author = u'Sajid Pareeth, Poolad Karimi, Tim Hessels,'
+author = u'Sajid Pareeth,  Tim Hessels, Poolad Karimi'
 
 # The short X.Y version
 version = u''
@@ -134,7 +134,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'PySEBAL_doc.tex', u'PySEBAL\\_doc Documentation',
-     u'Sajid Pareeth', 'manual'),
+     u'Sajid Pareeth Tim Hessels, Poolad Karimi', 'manual'),
 ]
 
 
