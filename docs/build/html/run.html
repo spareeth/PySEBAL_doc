@@ -157,8 +157,7 @@
 <a class="reference internal image-reference" href="_images/folder.png"><img alt="_images/folder.png" src="_images/folder.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Folder structure of input data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Open the excel sheet provided to you - <code class="docutils literal notranslate"><span class="pre">InputEXCEL_v3_3_7_WIN.xlsx</span></code>, you can also download it <a class="reference external" href="http://scientificpubs.com/misc/InputEXCEL_v3_3_7_WIN.xlsx">here</a>
-Make necessary changes to the excel sheet as listed below.</p>
+<p>Open the excel sheet provided to you - <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_WIN.xlsx</span></code> and make necessary changes to the excel sheet as listed below.</p>
 <p><strong>Sheet 1: General Input</strong></p>
 <ul class="simple">
 <li><p><strong>InputMap</strong> - set the path to your satellite data</p></li>
@@ -191,10 +190,10 @@ Make necessary changes to the excel sheet as listed below.</p>
 <li><p><strong>Name Landsat Image</strong> - Name of the landsat image bands (for example without <code class="docutils literal notranslate"><span class="pre">_B1.TIF</span></code>)</p></li>
 <li><p><strong>Landsat Number</strong> - 4/5/7/8 depending which landsat</p></li>
 <li><p><strong>Bands Thermal</strong> - 1/2, In case of Landsat 8, it is 2</p></li>
-<li><p><strong>tscold_min</strong> - Min temperature value to detect cold pixels from DEM corrected surface temperature</p></li>
-<li><p><strong>tscold_max</strong> - Max temperature value to detect cold pixels from DEM corrected surface temperature</p></li>
-<li><p><strong>ndvihot_low</strong> - Min NDVI value to pick the hot pixel</p></li>
-<li><p><strong>ndvihot_high</strong> - Max NDVI value to pick the hot pixel</p></li>
+<li><p><strong>tscold_min</strong> - Min percentile to compute minimum threshold for cold pixel from temperature layer (Default is 5)</p></li>
+<li><p><strong>tscold_max</strong> - Max percentile to compute maximum threshold for cold pixel from temperature layer (Default is 10)</p></li>
+<li><p><strong>ndvihot_low</strong> - Min percentile to compute minimum threshold from NDVI layer (Default is 2)</p></li>
+<li><p><strong>ndvihot_high</strong> - Max percentile to compute maximum threshold from NDVI layer (Default is 5)</p></li>
 <li><p><strong>temp_lapse_rate</strong> - Temperature lapse rate for correction of surface temperature</p></li>
 </ul>
 <div class="admonition note">
@@ -208,59 +207,18 @@ Make necessary changes to the excel sheet as listed below.</p>
 <p><strong>Edits in Run_py2 file</strong></p>
 <p>We need to make following changes in this file:</p>
 <ul class="simple">
-<li><p><strong>Line 15</strong> - Set the path to prepared excel sheet</p></li>
-<li><p><strong>Line 16</strong> - There are two modes CALIB/RUN. First run <strong>CALIB</strong> and then after setting the thresholds run in <strong>RUN</strong> mode.</p></li>
-<li><p><strong>Line 17/18</strong> -Set start and end row numbers for running all the landsat images in one go.</p></li>
+<li><p><strong>Line 14</strong> - Set the path to prepared excel sheet</p></li>
+<li><p><strong>Line 15/16</strong> -Set start and end row numbers for running all the landsat images in one go.</p></li>
 </ul>
 <p>Once you made the changes save and close the file <code class="docutils literal notranslate"><span class="pre">Run_py2</span></code></p>
 <p>Now open <strong>new</strong> <strong>OSGeo4W Shell</strong> and cd to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\SEBAL</span></code> folder and run the following command.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py2</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </td></tr></table></div>
-<p><strong>CALIB/RUN mode - setting the thresholds</strong></p>
-<p>In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max thresholds for cold and hot pixels. If you are fine with the default values, you can go ahead with the <strong>RUN</strong> mode. But if you want to set the thresholds for Landsat data separately, then running first in <strong>CALIB</strong> mode is ideal.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds.</p>
+<p>In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max percentile thresholds for cold and hot pixels. As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds. If the ETa results are not desirable with the default values, you may want to try different combinations. Also for a specific region, one set of values seems to work.</p>
 </div>
-<p>Once PySEBAL finish in “CALIB” mode we can compute the thresholds using the following commands.
-Open GRASS GIS in UTM location, in this case UTM38N, create a new location with <code class="docutils literal notranslate"><span class="pre">study_area.shp</span></code> file as the georeferenced file. Make a new mapset if you don’t have one. This mapset in UTM38N location can be used for further analysis of ETa outputs.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Open grass gis</span>
-<span class="n">grass78</span> <span class="o">--</span><span class="n">gui</span>
-<span class="c1"># Open bash</span>
-<span class="n">bash</span>
-<span class="c1"># check the region</span>
-<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="o">-</span><span class="n">p</span>
-<span class="c1"># set the resolution of the region to 30m</span>
-<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="n">res</span><span class="o">=</span><span class="mi">30</span> <span class="o">-</span><span class="n">a</span>
-<span class="c1"># Now change directory to PySEBAL output directory set in excel sheet</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">d</span><span class="o">/</span><span class="n">FAO_Training_Dec2019</span><span class="o">/</span><span class="n">PySEBAL_output</span><span class="o">/</span><span class="n">LC08_L1TP_168034_20180622_20180703_01_T1</span>
-<span class="c1"># Import the corrected surface temperature to this mapset</span>
-<span class="n">r</span><span class="o">.</span><span class="n">import</span><span class="o">.</span><span class="n">py</span> <span class="n">Output_thermal</span><span class="o">/</span><span class="n">L8_ts_dem_30m_2018_06_06_157</span><span class="o">.</span><span class="n">tif</span> <span class="n">output</span><span class="o">=</span><span class="n">ts_20180606</span>
-<span class="c1"># Import the NDVI to this mapset</span>
-<span class="n">r</span><span class="o">.</span><span class="n">import</span><span class="o">.</span><span class="n">py</span> <span class="n">Output_vegetation</span><span class="o">/</span><span class="n">L8_NDVI_30m_2018_06_06_157</span><span class="o">.</span><span class="n">tif</span> <span class="n">output</span><span class="o">=</span><span class="n">ndvi_20180606</span>
-<span class="c1"># Check for cold pixel thresholds from corrected surface temp</span>
-<span class="n">r</span><span class="o">.</span><span class="n">univar</span> <span class="o">-</span><span class="n">e</span> <span class="n">ts_20180606</span> <span class="n">percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span>
-<span class="n">r</span><span class="o">.</span><span class="n">univar</span> <span class="o">-</span><span class="n">e</span> <span class="n">ndvi_20180606</span> <span class="n">percentile</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span>
-</pre></div>
-</td></tr></table></div>
-<p>Once you get the thresholds update the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet, update the <strong>Run_py2</strong> line number 16 to <strong>RUN</strong> mode and run pySEBAL again for final results.</p>
 </div>
 
 

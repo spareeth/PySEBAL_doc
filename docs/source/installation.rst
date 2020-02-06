@@ -21,13 +21,13 @@ PySEBAL can run using both Python 2 and 3, (tested in > 2.7 and > 3.6).
 
 Source code
 ===========
-The PySEBAL library is hosted in a publicly available github repository. The library can be downloaded from `here <https://github.com/spareeth/PySEBAL_dev>`_
+The PySEBAL library is hosted in a publicly available github repository. The library can be downloaded from `here <https://github.com/spareeth/PySEBAL_dev>`_. In the link select the latest ``version3.7.3`` and **Download ZIP**.
 
-.. figure:: img/git1.png
+.. figure:: img/git3.png
    :align: center
    :width: 400
 
-| Once it is downloaded, unzip it (use *extract here*) into your ``D:\`` drive or any drive other than ``C:\`` drive.
+| Once it is downloaded, unzip it (use *extract here*) into your ``D:\`` drive or any drive other than ``C:\`` drive. Rename the folder ``PySEBAL_dev-version3.7.3`` to ``PySEBAL_dev``.
 
 | The directory structure after download and unzip should like like below.
 
@@ -282,15 +282,15 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
    # Run the PySEBAL script
    python Run_py2.py
 
-After the above commands, there will be a ``output`` folder inside ``D:\PySEBAL\test_data`` with the following structure.
+After the above commands, there will be a ``output`` folder inside ``D:\PySEBAL\test_data`` with the following structure. 
 
-.. figure:: img/pysebal_folderstr.png
+.. figure:: img/pysebal_folderstr1.png
    :align: center
    :width: 200
 
 .. warning::
 
-   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the path in above commands accordingly.
+   If PySEBAL_dev is not in ``D:`` drive, adapt changes to the path in above commands accordingly. To change the path open the excel sheet ``D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_WIN.xlsx`` in case of Windows OR open ``D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_LIN.xlsx`` in case of Linux. You need to change the path in columns B, C & E in the sheet 1.
 
 .. note::
 
