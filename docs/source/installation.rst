@@ -106,6 +106,7 @@ Installing dependencies
  * pandas (select all four packages python 2 & 3 , pandas and geopandas packages)
  * scipy (select both the packages for python 2 & 3)
  * tcltk (select both the packages for python 2 & 3)
+ * pip (select both the packages for python 2 & 3)
  | Click "Next" and finish the installation
 
 Setting environment variables
@@ -118,8 +119,6 @@ Setting environment variables
 * Click new and add four new system variables. Add the **Variable name** and **Variable value** as shown below.
 
  * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``
- * **PYTHONPATH** set to ``C:\OSGeo4W64\apps\Python27\Scripts``
- * **PYTHONHOME** set to ``C:\OSGeo4W64\apps\Python27``
  * **SEBAL** set to ``C:\OSGeo4W64\bin``
 
 * Edit the variable **Path** in the **System variables** to add the path ``C:\OSGeo4W64\bin`` to the end followed by a semicolon (;) in windows 7 **OR** add this path as a new line in the path variable in Windows 10.
