@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,28 +11,30 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="PySEBAL data requirements" href="data.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> PySEBAL_doc
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PySEBAL_doc
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -106,12 +108,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL input data arrangement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -150,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>PySEBAL Installation</li>
     
@@ -190,7 +193,7 @@
 <li><p>Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)</p></li>
 <li><p>Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)</p></li>
 </ul>
-<p>PySEBAL can run using both Python 2 and 3, (tested in &gt; 2.7 and &gt; 3.6).</p>
+<p>PySEBAL can be run in Python 3, (tested in python &gt; 3.6).</p>
 </div>
 </div>
 <div class="section" id="source-code">
@@ -291,6 +294,7 @@ Or get it from the usb stick provided.</div>
 <li><p>pandas (select all four packages python 2 &amp; 3 , pandas and geopandas packages)</p></li>
 <li><p>scipy (select both the packages for python 2 &amp; 3)</p></li>
 <li><p>tcltk (select both the packages for python 2 &amp; 3)</p></li>
+<li><p>pip (select both the packages for python 2 &amp; 3)</p></li>
 </ul>
 <div class="line-block">
 <div class="line">Click “Next” and finish the installation</div>
@@ -309,8 +313,6 @@ Or get it from the usb stick provided.</div>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>GDAL_DATA</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\share\epsg_csv</span></code></p></li>
-<li><p><strong>PYTHONPATH</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\apps\Python27\Scripts</span></code></p></li>
-<li><p><strong>PYTHONHOME</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\apps\Python27</span></code></p></li>
 <li><p><strong>SEBAL</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code></p></li>
 </ul>
 </div></blockquote>
@@ -366,10 +368,10 @@ python -m pip install openpyxl netCDF4 joblib
 <span class="c1"># open python</span>
 <span class="n">python</span>
 <span class="c1"># import one of the PySEBAL Script</span>
-<span class="kn">import</span> <span class="nn">pysebal_py2</span>
+<span class="kn">import</span> <span class="nn">pysebal_py3</span>
 <span class="c1"># If there are no errors, the installation is successful</span>
 <span class="c1"># To exit from python</span>
-<span class="nb">exit</span><span class="p">()</span>
+<span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -467,7 +469,7 @@ git clone https://github.com/spareeth/PySEBAL_dev.git
 ls
 <span class="c1"># Open Python</span>
 python
-import pysebal_py2
+import pysebal_py3
 <span class="c1"># If there are no errors, the installation is successful</span>
 <span class="c1"># To exit from python (ctrl-d)</span>
 exit<span class="o">()</span>
@@ -497,7 +499,7 @@ exit<span class="o">()</span>
 <span class="c1"># change to the PySEBAL_dev\SEBAL directory</span>
 <span class="nb">cd</span> D:<span class="se">\P</span>ySEBAL_dev<span class="se">\S</span>EBAL
 <span class="c1"># Run the PySEBAL script</span>
-python Run_py2.py
+python Run_py3.py
 </pre></div>
 </td></tr></table></div>
 <div class="line-block">
@@ -513,7 +515,7 @@ python Run_py2.py
 <span class="c1"># change to the PySEBAL_dev\SEBAL directory</span>
 <span class="nb">cd</span> <span class="se">\m</span>nt<span class="se">\d\P</span>ySEBAL_dev<span class="se">\S</span>EBAL
 <span class="c1"># Run the PySEBAL script</span>
-python Run_py2.py
+python Run_py3.py
 </pre></div>
 </td></tr></table></div>
 <p>After the above commands, there will be a <code class="docutils literal notranslate"><span class="pre">output</span></code> folder inside <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL\test_data</span></code> with the following structure.</p>
@@ -551,11 +553,19 @@ python Run_py2.py
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright © 2019 IHE Delft Institute for Water Education
+        
+        &copy; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -566,7 +576,6 @@ python Run_py2.py
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

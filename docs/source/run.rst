@@ -54,7 +54,6 @@ Open the excel sheet provided to you - ``D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_W
 * **ndvihot_high** - Max percentile to compute maximum threshold from NDVI layer (Default is 5)
 * **temp_lapse_rate** - Temperature lapse rate for correction of surface temperature
 
-
 .. note::
 
    Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.
@@ -71,6 +70,9 @@ We need to make following changes in this file:
 * **Line 14** - Set the path to prepared excel sheet
 * **Line 15/16** -Set start and end row numbers for running all the landsat images in one go.
 
+Run PySEBAL
+===========
+
 Once you made the changes save and close the file ``Run_py3``
 
 Now open **new** **OSGeo4W Shell** and cd to ``PySEBAL_dev\SEBAL`` folder and run the following command.
@@ -83,3 +85,15 @@ Now open **new** **OSGeo4W Shell** and cd to ``PySEBAL_dev\SEBAL`` folder and ru
 .. note::
 
    In the **Sheet 4: Landsat_Input** of the input excel sheet we have to set NDVI and Temperature min and max percentile thresholds for cold and hot pixels. As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds. If the ETa results are not desirable with the default values, you may want to try different combinations. Also for a specific region, one set of values seems to work.
+
+Output data structure
+=====================
+
+Once the PySEBAL run successfully, you will find following structure in the output folder (one set in the excel sheet !)
+
+.. figure:: img/output.png
+   :align: center
+   :width: 400
+   
+   Folder structure of output data
+

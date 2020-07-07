@@ -1,39 +1,40 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PySEBAL input data arrangement &mdash; PySEBAL_doc 0.1 documentation</title>
+  <title>PySEBAL data preparation and execution &mdash; PySEBAL_doc 0.1 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="PySEBAL data requirements" href="data.html" /> 
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> PySEBAL_doc
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PySEBAL_doc
           
 
           
@@ -73,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +86,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">PySEBAL Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">PySEBAL input data arrangement</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PySEBAL data preparation and execution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-data-preparation">Input data preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-pysebal">Run PySEBAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-data-structure">Output data structure</a></li>
+</ul>
+</li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,9 +136,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>PySEBAL input data arrangement</li>
+      <li>PySEBAL data preparation and execution</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,8 +157,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pysebal-input-data-arrangement">
-<h1>PySEBAL input data arrangement<a class="headerlink" href="#pysebal-input-data-arrangement" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pysebal-data-preparation-and-execution">
+<h1>PySEBAL data preparation and execution<a class="headerlink" href="#pysebal-data-preparation-and-execution" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="input-data-preparation">
+<h2>Input data preparation<a class="headerlink" href="#input-data-preparation" title="Permalink to this headline">¶</a></h2>
 <p>Let us now arrange all the data we prepared to Run PySEBAL and prepare a input excel sheet.</p>
 <p>Assuming that you have following folder structure (recommended) for input data:</p>
 <div class="figure align-center" id="id1">
@@ -200,24 +210,34 @@
 <p class="admonition-title">Note</p>
 <p>Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.</p>
 </div>
-<p>Once the input excel sheet is ready, open the Run SEBAL python file which is in <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> folder.
-* If you are running in python 2 - the file is <code class="docutils literal notranslate"><span class="pre">Run_py2.py</span></code>
-* If you are running in python 3 - the file is <code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code></p>
-<p>Assuming that you are using python 2, open <code class="docutils literal notranslate"><span class="pre">Run_py2.py</span></code> in Notepadd++.</p>
-<p><strong>Edits in Run_py2 file</strong></p>
+<p>Once the input excel sheet is ready, open the Run SEBAL python file (<code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code>) which is in <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> folder.</p>
+<p>Open the file <code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code> in Notepadd++.</p>
+<p><strong>Edits in Run_py3 file</strong></p>
 <p>We need to make following changes in this file:</p>
 <ul class="simple">
 <li><p><strong>Line 14</strong> - Set the path to prepared excel sheet</p></li>
 <li><p><strong>Line 15/16</strong> -Set start and end row numbers for running all the landsat images in one go.</p></li>
 </ul>
-<p>Once you made the changes save and close the file <code class="docutils literal notranslate"><span class="pre">Run_py2</span></code></p>
+</div>
+<div class="section" id="run-pysebal">
+<h2>Run PySEBAL<a class="headerlink" href="#run-pysebal" title="Permalink to this headline">¶</a></h2>
+<p>Once you made the changes save and close the file <code class="docutils literal notranslate"><span class="pre">Run_py3</span></code></p>
 <p>Now open <strong>new</strong> <strong>OSGeo4W Shell</strong> and cd to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\SEBAL</span></code> folder and run the following command.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py2</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py3</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max percentile thresholds for cold and hot pixels. As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds. If the ETa results are not desirable with the default values, you may want to try different combinations. Also for a specific region, one set of values seems to work.</p>
+</div>
+</div>
+<div class="section" id="output-data-structure">
+<h2>Output data structure<a class="headerlink" href="#output-data-structure" title="Permalink to this headline">¶</a></h2>
+<p>Once the PySEBAL run successfully, you will find following structure in the output folder (one set in the excel sheet !)</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/output.png"><img alt="_images/output.png" src="_images/output.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Folder structure of output data</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 
@@ -239,11 +259,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright © 2019 IHE Delft Institute for Water Education
+        
+        &copy; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -254,7 +282,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

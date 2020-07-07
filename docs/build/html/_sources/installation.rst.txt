@@ -17,7 +17,7 @@ Operating systems
 * Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)
 * Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)
 
-PySEBAL can run using both Python 2 and 3, (tested in > 2.7 and > 3.6).
+PySEBAL can be run in Python 3, (tested in python > 3.6).
 
 Source code
 ===========
@@ -106,6 +106,7 @@ Installing dependencies
  * pandas (select all four packages python 2 & 3 , pandas and geopandas packages)
  * scipy (select both the packages for python 2 & 3)
  * tcltk (select both the packages for python 2 & 3)
+ * pip (select both the packages for python 2 & 3)
  | Click "Next" and finish the installation
 
 Setting environment variables
@@ -118,8 +119,6 @@ Setting environment variables
 * Click new and add four new system variables. Add the **Variable name** and **Variable value** as shown below.
 
  * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``
- * **PYTHONPATH** set to ``C:\OSGeo4W64\apps\Python27\Scripts``
- * **PYTHONHOME** set to ``C:\OSGeo4W64\apps\Python27``
  * **SEBAL** set to ``C:\OSGeo4W64\bin``
 
 * Edit the variable **Path** in the **System variables** to add the path ``C:\OSGeo4W64\bin`` to the end followed by a semicolon (;) in windows 7 **OR** add this path as a new line in the path variable in Windows 10.
@@ -167,7 +166,7 @@ To test whether the PySEBAL will run, open OSGeo4W Shell, and type following com
    # open python
    python
    # import one of the PySEBAL Script
-   import pysebal_py2
+   import pysebal_py3
    # If there are no errors, the installation is successful
    # To exit from python
    exit()
@@ -244,7 +243,7 @@ Open a terminal and type in following codes to test if the installation is succe
    ls
    # Open Python
    python
-   import pysebal_py2
+   import pysebal_py3
    # If there are no errors, the installation is successful
    # To exit from python (ctrl-d)
    exit()
@@ -268,7 +267,7 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
    # change to the PySEBAL_dev\SEBAL directory
    cd D:\PySEBAL_dev\SEBAL
    # Run the PySEBAL script
-   python Run_py2.py
+   python Run_py3.py
 
 | **In Linux**
 
@@ -280,7 +279,7 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
    # change to the PySEBAL_dev\SEBAL directory
    cd \mnt\d\PySEBAL_dev\SEBAL
    # Run the PySEBAL script
-   python Run_py2.py
+   python Run_py3.py
 
 After the above commands, there will be a ``output`` folder inside ``D:\PySEBAL\test_data`` with the following structure. 
 
