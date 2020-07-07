@@ -57,27 +57,25 @@ Open the excel sheet provided to you - ``D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_W
    Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.
 
 
-Once the input excel sheet is ready, open the Run SEBAL python file which is in ``D:\PySEBAL_dev\SEBAL`` folder.
-* If you are running in python 2 - the file is ``Run_py2.py``
-* If you are running in python 3 - the file is ``Run_py3.py``
+Once the input excel sheet is ready, open the Run SEBAL python file (``Run_py3.py``) which is in ``D:\PySEBAL_dev\SEBAL`` folder.
 
-Assuming that you are using python 2, open ``Run_py2.py`` in Notepadd++.
+Open the file ``Run_py3.py`` in Notepadd++.
 
-**Edits in Run_py2 file**
+**Edits in Run_py3 file**
 
 We need to make following changes in this file:
 
 * **Line 14** - Set the path to prepared excel sheet
 * **Line 15/16** -Set start and end row numbers for running all the landsat images in one go.
 
-Once you made the changes save and close the file ``Run_py2``
+Once you made the changes save and close the file ``Run_py3``
 
 Now open **new** **OSGeo4W Shell** and cd to ``PySEBAL_dev\SEBAL`` folder and run the following command.
 
 .. code-block:: python
    :linenos:
 
-   python Run_py2.py
+   python Run_py3.py
 
 .. note::
 
