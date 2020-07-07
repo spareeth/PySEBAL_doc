@@ -1,5 +1,8 @@
-PySEBAL input data arrangement
-******************************
+PySEBAL data preparation and execution
+**************************************
+
+Input data preparation
+======================
 
 Let us now arrange all the data we prepared to Run PySEBAL and prepare a input excel sheet.
 
