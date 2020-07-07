@@ -97,3 +97,41 @@ Once the PySEBAL run successfully, you will find following structure in the outp
    
    Folder structure of output data
 
+Deatils of the output data
+==========================
+
+Once the PySEBAL run successfully, you will find following data in the output folder (one set in the excel sheet !)
+
+**log.txt** - All the constants and derived thresholds are stored here
+**Folder 1: Output_biomass_production**
+* **L8_Biomass_production_30m_2014_03_10_069.tif** - Biomass production (Kg/ha)
+* **L8_Biomass_wp_30m_2014_03_10_069.tif** - Biomass Water Productivity WPb (Kg/m3)
+* **L8_Biomass_deficit_30m_2014_03_10_069.tif** - Deficit Biomass production (Kg/ha)
+
+**Folder 2: Output_evapotranspiration**
+* **L8_Advection_Factor_30m_2014_03_10_069.tif** - Advection factor (unitless)
+* **L8_EFinst_30m_2014_03_10_069.tif** - instantaneous Evaporative Fraction (unitless)
+* **L8_ET_24_deficit_30m_2014_03_10_069.tif** - 24 hours ET deficit (mm/day)
+* **L8_ETact_24_30m_2014_03_10_069.tif** - 24 hours Actual EvapoTranspiration (mm/day)
+* **L8_ETpot_24_30m_2014_03_10_069.tif** - 24 hours Potential EvapoTranspiration (mm/day)
+* **L8_ETref_24_30m_2014_03_10_069.tif** - 24 hours Reference EvapoTranspiration (mm/day)
+* **L8_Eact_24_30m_2014_03_10_069.tif** - 24 hours Actual Evaporation (mm/day)
+* **L8_T_24_deficit_30m_2014_03_10_069.tif** - 24 hours Deficit Transpiration (mm/day)
+* **L8_Tact_24_30m_2014_03_10_069.tif** - 24 hours Actual Transpiration (mm/day)
+* **L8_Tpot_24_30m_2014_03_10_069.tif** - 24 hours Potential Transpiration (mm/day)
+* **L8_cold_pixels_30m_2014_03_10_069.tif** - Detected cold pixels (unitless) 
+* **L8_hot_pixels_30m_2014_03_10_069.tif** - Detected hot pixels (unitless) 
+* **L8_kc_30m_2014_03_10_069.tif** - Crop coefficient Kc (unitless) 
+* **L8_kc_max_30m_2014_03_10_069.tif** - Max Crop coefficient Kc (unitless) 
+* **L8_water_mask_30m_2014_03_10_069.tif** - Water mask (unitless) 
+
+**Folder 3: Output_vegetation**
+* **L8_L8_surface_temp_30m_2014_03_10_069.tif** - TOA temperature (Kelvin)
+* **L8_NDVI_30m_2014_03_10_069.tif** - Normalized Diffrence Vegetation Index (unitless)
+* **L8_SAVI_30m_2014_03_10_069.tif** - Soil Adjusted Vegetation Index (unitless)
+* **L8_lai_average_30m_2014_03_10_069.tif** - Leaf Area Index (unitless)
+* **L8_surface_albedo_30m_2014_03_10_069.tif** - Surface albedo (unitless)
+* **L8_surface_temp_sharpened_30m_2014_03_10_069.tif** - Sharpened Temperature using NDVI (Kelvin)
+* **L8_temp_corr_30m_2014_03_10_069.tif** - Surface Temperature (Kelvin)
+* **L8_ts_dem_30m_2014_03_10_069.tif** - DEM corrected Temperature (Kelvin)
+* **L8_vegt_cover_30m_2014_03_10_069.tif** - vegetation cover (unitless)

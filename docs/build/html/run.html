@@ -90,6 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#input-data-preparation">Input data preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-pysebal">Run PySEBAL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#output-data-structure">Output data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deatils-of-the-output-data">Deatils of the output data</a></li>
 </ul>
 </li>
 </ul>
@@ -238,6 +239,41 @@
 <a class="reference internal image-reference" href="_images/output.png"><img alt="_images/output.png" src="_images/output.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Folder structure of output data</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<div class="section" id="deatils-of-the-output-data">
+<h2>Deatils of the output data<a class="headerlink" href="#deatils-of-the-output-data" title="Permalink to this headline">¶</a></h2>
+<p>Once the PySEBAL run successfully, you will find following data in the output folder (one set in the excel sheet !)</p>
+<p><strong>log.txt</strong> - All the constants and derived thresholds are stored here
+<strong>Folder 1: Output_biomass_production</strong>
+* <strong>L8_Biomass_production_30m_2014_03_10_069.tif</strong> - Biomass production (Kg/ha)
+* <strong>L8_Biomass_wp_30m_2014_03_10_069.tif</strong> - Biomass Water Productivity WPb (Kg/m3)
+* <strong>L8_Biomass_deficit_30m_2014_03_10_069.tif</strong> - Deficit Biomass production (Kg/ha)</p>
+<p><strong>Folder 2: Output_evapotranspiration</strong>
+* <strong>L8_Advection_Factor_30m_2014_03_10_069.tif</strong> - Advection factor (unitless)
+* <strong>L8_EFinst_30m_2014_03_10_069.tif</strong> - instantaneous Evaporative Fraction (unitless)
+* <strong>L8_ET_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours ET deficit (mm/day)
+* <strong>L8_ETact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual EvapoTranspiration (mm/day)
+* <strong>L8_ETpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential EvapoTranspiration (mm/day)
+* <strong>L8_ETref_24_30m_2014_03_10_069.tif</strong> - 24 hours Reference EvapoTranspiration (mm/day)
+* <strong>L8_Eact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Evaporation (mm/day)
+* <strong>L8_T_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours Deficit Transpiration (mm/day)
+* <strong>L8_Tact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Transpiration (mm/day)
+* <strong>L8_Tpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential Transpiration (mm/day)
+* <strong>L8_cold_pixels_30m_2014_03_10_069.tif</strong> - Detected cold pixels (unitless)
+* <strong>L8_hot_pixels_30m_2014_03_10_069.tif</strong> - Detected hot pixels (unitless)
+* <strong>L8_kc_30m_2014_03_10_069.tif</strong> - Crop coefficient Kc (unitless)
+* <strong>L8_kc_max_30m_2014_03_10_069.tif</strong> - Max Crop coefficient Kc (unitless)
+* <strong>L8_water_mask_30m_2014_03_10_069.tif</strong> - Water mask (unitless)</p>
+<p><strong>Folder 3: Output_vegetation</strong>
+* <strong>L8_L8_surface_temp_30m_2014_03_10_069.tif</strong> - TOA temperature (Kelvin)
+* <strong>L8_NDVI_30m_2014_03_10_069.tif</strong> - Normalized Diffrence Vegetation Index (unitless)
+* <strong>L8_SAVI_30m_2014_03_10_069.tif</strong> - Soil Adjusted Vegetation Index (unitless)
+* <strong>L8_lai_average_30m_2014_03_10_069.tif</strong> - Leaf Area Index (unitless)
+* <strong>L8_surface_albedo_30m_2014_03_10_069.tif</strong> - Surface albedo (unitless)
+* <strong>L8_surface_temp_sharpened_30m_2014_03_10_069.tif</strong> - Sharpened Temperature using NDVI (Kelvin)
+* <strong>L8_temp_corr_30m_2014_03_10_069.tif</strong> - Surface Temperature (Kelvin)
+* <strong>L8_ts_dem_30m_2014_03_10_069.tif</strong> - DEM corrected Temperature (Kelvin)
+* <strong>L8_vegt_cover_30m_2014_03_10_069.tif</strong> - vegetation cover (unitless)</p>
 </div>
 </div>
 
