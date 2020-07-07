@@ -177,7 +177,7 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-copyright = "© 2019 IHE Delft Institute for Water Education"
+copyright = "Sajid Pareeth © 2020 IHE Delft Institute for Water Education"
 
 # -- Extension configuration -------------------------------------------------
 def setup(app):
