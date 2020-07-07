@@ -17,7 +17,7 @@ Operating systems
 * Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)
 * Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)
 
-PySEBAL can be run in Python 3, (tested in > 2.7 and > 3.6).
+PySEBAL can be run in Python 3, (tested in python > 3.6).
 
 Source code
 ===========
