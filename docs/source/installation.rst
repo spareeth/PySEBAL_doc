@@ -137,8 +137,8 @@ Setting environment variables
 .. code-block:: bash
    :linenos:
 
-   pip install setuptools
-   pip install openpyxl netCDF4 joblib
+   pip3 install setuptools
+   pip3 install openpyxl netCDF4 joblib
 
 .. warning::
 
@@ -147,8 +147,8 @@ Setting environment variables
 .. code-block:: bash
    :linenos:
 
-   python -m pip install setuptools
-   python -m pip install openpyxl netCDF4 joblib
+   python -m pip3 install setuptools
+   python -m pip3 install openpyxl netCDF4 joblib
 
 Test installation
 +++++++++++++++++
