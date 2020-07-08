@@ -150,7 +150,7 @@ Now let us do all the processing in GDAL library and GRASS GIS already installed
 
 | For an introduction to GRASS GIS see this `presentation <https://gitpitch.com/veroandreo/grass_opengeohub2019/master?p=slides/intro>`_.
 
-Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this `file <http://scientificpubs.com/misc/.bashrc>`_ and save in ``echo $HOME`` folder. Please change line no: 22 in this file ``.bashrc`` only the ``/c/OSGeo4W64/apps/grass/grass78/scripts`` to same path in your computer. 
+Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this `file <https://github.com/spareeth/PySEBAL_doc/blob/version3.7.3/.bashrc>`_ and save in ``echo $HOME`` folder. Please change line no: 22 in this file ``.bashrc`` only the ``/c/OSGeo4W64/apps/grass/grass78/scripts`` to the corresponding path in your computer. 
 
 .. code-block:: Shell
    :linenos:
@@ -263,7 +263,7 @@ Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.03
 
 
 | Now let us create instantaneous and daily averages:
-| For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30.
+| For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30 (Both Landsat and GLDAS times are in GMT). The time varies according to your study area.
 
 .. code-block:: Shell
    :linenos:

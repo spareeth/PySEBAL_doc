@@ -292,7 +292,7 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 <div class="line-block">
 <div class="line">For an introduction to GRASS GIS see this <a class="reference external" href="https://gitpitch.com/veroandreo/grass_opengeohub2019/master?p=slides/intro">presentation</a>.</div>
 </div>
-<p>Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this <a class="reference external" href="http://scientificpubs.com/misc/.bashrc">file</a> and save in <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$HOME</span></code> folder. Please change line no: 22 in this file <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> only the <code class="docutils literal notranslate"><span class="pre">/c/OSGeo4W64/apps/grass/grass78/scripts</span></code> to same path in your computer.</p>
+<p>Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this <a class="reference external" href="https://github.com/spareeth/PySEBAL_doc/blob/version3.7.3/.bashrc">file</a> and save in <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$HOME</span></code> folder. Please change line no: 22 in this file <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> only the <code class="docutils literal notranslate"><span class="pre">/c/OSGeo4W64/apps/grass/grass78/scripts</span></code> to the corresponding path in your computer.</p>
 <div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Start the Linux bash</span>
  bash
@@ -421,7 +421,7 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 </div>
 <div class="line-block">
 <div class="line">Now let us create instantaneous and daily averages:</div>
-<div class="line">For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30.</div>
+<div class="line">For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30 (Both Landsat and GLDAS times are in GMT). The time varies according to your study area.</div>
 </div>
 <div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
