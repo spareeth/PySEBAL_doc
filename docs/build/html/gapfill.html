@@ -36,7 +36,8 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PySEBAL data preparation and execution" href="run.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,10 +83,17 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">PySEBAL Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Aggregating to monthly and gapfilling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-data-preparation">Input data preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-pysebal">Run PySEBAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-data-structure">Output data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#details-of-the-output-data">Details of the output data</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -153,7 +161,11 @@
             
   <div class="section" id="aggregating-to-monthly-and-gapfilling">
 <h1>Aggregating to monthly and gapfilling<a class="headerlink" href="#aggregating-to-monthly-and-gapfilling" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="input-data-preparation">
+<p>The aggregation and gapfill script available with PySEBAL will perform the monthly aggregation, filtering, temporal and spatial interpolation on outputs of PySEBAL runs.
+The below video explains how to run gapfill script on a set of output files from PySEBAL run.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+    <iframe src="https://www.youtube.com/embed/JPbc7ZambRo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div><div class="section" id="input-data-preparation">
 <h2>Input data preparation<a class="headerlink" href="#input-data-preparation" title="Permalink to this headline">¶</a></h2>
 <p>Let us now arrange all the data we prepared to Run PySEBAL and prepare a input excel sheet.</p>
 <p>Assuming that you have following folder structure (recommended) for input data:</p>
@@ -281,6 +293,13 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="run.html" class="btn btn-neutral float-left" title="PySEBAL data preparation and execution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
