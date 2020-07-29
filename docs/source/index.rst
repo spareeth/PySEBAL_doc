@@ -9,4 +9,5 @@ PySEBAL documentation
    installation
    data
    run
+   gapfill
 
