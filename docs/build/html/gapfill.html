@@ -87,13 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">PySEBAL Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Aggregating to monthly and gapfilling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#input-data-preparation">Input data preparation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-pysebal">Run PySEBAL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#output-data-structure">Output data structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#details-of-the-output-data">Details of the output data</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Aggregating to monthly and gapfilling</a></li>
 </ul>
 
             
@@ -165,128 +159,7 @@
 The below video explains how to run gapfill script on a set of output files from PySEBAL run.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
     <iframe src="https://www.youtube.com/embed/JPbc7ZambRo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div><div class="section" id="input-data-preparation">
-<h2>Input data preparation<a class="headerlink" href="#input-data-preparation" title="Permalink to this headline">¶</a></h2>
-<p>Let us now arrange all the data we prepared to Run PySEBAL and prepare a input excel sheet.</p>
-<p>Assuming that you have following folder structure (recommended) for input data:</p>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="_images/folder.png"><img alt="_images/folder.png" src="_images/folder.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Folder structure of input data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>Open the excel sheet provided to you - <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_WIN.xlsx</span></code> and make necessary changes to the excel sheet as listed below.</p>
-<p><strong>Sheet 1: General Input</strong></p>
-<ul class="simple">
-<li><p><strong>InputMap</strong> - set the path to your satellite data</p></li>
-<li><p><strong>OutputMap</strong> - Where you want to save PySEBAL outputs (if not existing, PySEBAL will create the folder)</p></li>
-<li><p><strong>Image_type</strong> - satellite type</p></li>
-<li><p><strong>NameDEM</strong> - set the path to DEM file (Note that you need to provide the file name with extension(.tif))</p></li>
-</ul>
-<p><strong>Sheet 2: Meteo_Input</strong></p>
-<ul class="simple">
-<li><p><strong>Temp_inst</strong> - set the path to instantaneous air temperature (including file name and extension)</p></li>
-<li><p><strong>Temp_24</strong> - set the path to daily average air temperature (including file name and extension)</p></li>
-<li><p><strong>RH_inst</strong> - set the path to instantaneous Relative humidity (including file name and extension)</p></li>
-<li><p><strong>RH_24</strong> - set the path to daily average Relative humidity (including file name and extension)</p></li>
-<li><p><strong>Wind_inst</strong> - set the path to instantaneous wind speed (including file name and extension)</p></li>
-<li><p><strong>Wind_24</strong> - set the path to daily average wind speed (including file name and extension)</p></li>
-<li><p><strong>Rs_inst</strong> - set the path to instantaneous downward shortwave radiation (including file name and extension)</p></li>
-<li><p><strong>Rs_24</strong> - set the path to daily downward shortwave radiation (including file name and extension)</p></li>
-</ul>
-<p><strong>Sheet 3: Soil_Input</strong></p>
-<ul class="simple">
-<li><p><strong>Saturated soil moisture content</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Saturated soil moisture content subsoil</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Residual soil moisture content</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Residual soil moisture content subsoil</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Field_Capacity</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Wilting point</strong> - set the path with filename and extension</p></li>
-</ul>
-<p><strong>Sheet 4: Landsat_Input</strong></p>
-<ul class="simple">
-<li><p><strong>Name Landsat Image</strong> - Name of the landsat image bands (for example without <code class="docutils literal notranslate"><span class="pre">_B1.TIF</span></code>)</p></li>
-<li><p><strong>Landsat Number</strong> - 4/5/7/8 depending which landsat</p></li>
-<li><p><strong>Bands Thermal</strong> - 1/2, In case of Landsat 8, it is 2</p></li>
-<li><p><strong>tscold_min</strong> - Min percentile to compute minimum threshold for cold pixel from temperature layer (Default is 5)</p></li>
-<li><p><strong>tscold_max</strong> - Max percentile to compute maximum threshold for cold pixel from temperature layer (Default is 10)</p></li>
-<li><p><strong>ndvihot_low</strong> - Min percentile to compute minimum threshold from NDVI layer (Default is 2)</p></li>
-<li><p><strong>ndvihot_high</strong> - Max percentile to compute maximum threshold from NDVI layer (Default is 5)</p></li>
-<li><p><strong>temp_lapse_rate</strong> - Temperature lapse rate for correction of surface temperature</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.</p>
-</div>
-<p>Once the input excel sheet is ready, open the Run SEBAL python file (<code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code>) which is in <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> folder.</p>
-<p>Open the file <code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code> in Notepadd++.</p>
-<p><strong>Edits in Run_py3 file</strong></p>
-<p>We need to make following changes in this file:</p>
-<ul class="simple">
-<li><p><strong>Line 14</strong> - Set the path to prepared excel sheet</p></li>
-<li><p><strong>Line 15/16</strong> -Set start and end row numbers for running all the landsat images in one go.</p></li>
-</ul>
-</div>
-<div class="section" id="run-pysebal">
-<h2>Run PySEBAL<a class="headerlink" href="#run-pysebal" title="Permalink to this headline">¶</a></h2>
-<p>Once you made the changes save and close the file <code class="docutils literal notranslate"><span class="pre">Run_py3</span></code></p>
-<p>Now open <strong>new</strong> <strong>OSGeo4W Shell</strong> and cd to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\SEBAL</span></code> folder and run the following command.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py3</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max percentile thresholds for cold and hot pixels. As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds. If the ETa results are not desirable with the default values, you may want to try different combinations. Also for a specific region, one set of values seems to work.</p>
-</div>
-</div>
-<div class="section" id="output-data-structure">
-<h2>Output data structure<a class="headerlink" href="#output-data-structure" title="Permalink to this headline">¶</a></h2>
-<p>Once the PySEBAL run successfully, you will find following structure in the output folder (one set in the excel sheet !)</p>
-<div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="_images/output.png"><img alt="_images/output.png" src="_images/output.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Folder structure of output data</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="details-of-the-output-data">
-<h2>Details of the output data<a class="headerlink" href="#details-of-the-output-data" title="Permalink to this headline">¶</a></h2>
-<p>Once the PySEBAL run successfully, you will find following data in the output folder (one set in the excel sheet !)</p>
-<p><strong>log.txt</strong> - All the constants and derived thresholds are stored here</p>
-<p><strong>Folder 1: Output_biomass_production</strong></p>
-<ul class="simple">
-<li><p><strong>L8_Biomass_production_30m_2014_03_10_069.tif</strong> - Biomass production (Kg/ha)</p></li>
-<li><p><strong>L8_Biomass_wp_30m_2014_03_10_069.tif</strong> - Biomass Water Productivity WPb (Kg/m3)</p></li>
-<li><p><strong>L8_Biomass_deficit_30m_2014_03_10_069.tif</strong> - Deficit Biomass production (Kg/ha)</p></li>
-</ul>
-<p><strong>Folder 2: Output_evapotranspiration</strong></p>
-<ul class="simple">
-<li><p><strong>L8_Advection_Factor_30m_2014_03_10_069.tif</strong> - Advection factor (unitless)</p></li>
-<li><p><strong>L8_EFinst_30m_2014_03_10_069.tif</strong> - instantaneous Evaporative Fraction (unitless)</p></li>
-<li><p><strong>L8_ET_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours ET deficit (mm/day)</p></li>
-<li><p><strong>L8_ETact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual EvapoTranspiration (mm/day)</p></li>
-<li><p><strong>L8_ETpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential EvapoTranspiration (mm/day)</p></li>
-<li><p><strong>L8_ETref_24_30m_2014_03_10_069.tif</strong> - 24 hours Reference EvapoTranspiration (mm/day)</p></li>
-<li><p><strong>L8_Eact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Evaporation (mm/day)</p></li>
-<li><p><strong>L8_T_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours Deficit Transpiration (mm/day)</p></li>
-<li><p><strong>L8_Tact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Transpiration (mm/day)</p></li>
-<li><p><strong>L8_Tpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential Transpiration (mm/day)</p></li>
-<li><p><strong>L8_cold_pixels_30m_2014_03_10_069.tif</strong> - Detected cold pixels (unitless)</p></li>
-<li><p><strong>L8_hot_pixels_30m_2014_03_10_069.tif</strong> - Detected hot pixels (unitless)</p></li>
-<li><p><strong>L8_kc_30m_2014_03_10_069.tif</strong> - Crop coefficient Kc (unitless)</p></li>
-<li><p><strong>L8_kc_max_30m_2014_03_10_069.tif</strong> - Max Crop coefficient Kc (unitless)</p></li>
-<li><p><strong>L8_water_mask_30m_2014_03_10_069.tif</strong> - Water mask (unitless)</p></li>
-</ul>
-<p><strong>Folder 3: Output_vegetation</strong></p>
-<ul class="simple">
-<li><p><strong>L8_L8_surface_temp_30m_2014_03_10_069.tif</strong> - TOA temperature (Kelvin)</p></li>
-<li><p><strong>L8_NDVI_30m_2014_03_10_069.tif</strong> - Normalized Diffrence Vegetation Index (unitless)</p></li>
-<li><p><strong>L8_SAVI_30m_2014_03_10_069.tif</strong> - Soil Adjusted Vegetation Index (unitless)</p></li>
-<li><p><strong>L8_lai_average_30m_2014_03_10_069.tif</strong> - Leaf Area Index (unitless)</p></li>
-<li><p><strong>L8_surface_albedo_30m_2014_03_10_069.tif</strong> - Surface albedo (unitless)</p></li>
-<li><p><strong>L8_surface_temp_sharpened_30m_2014_03_10_069.tif</strong> - Sharpened Temperature using NDVI (Kelvin)</p></li>
-<li><p><strong>L8_temp_corr_30m_2014_03_10_069.tif</strong> - Surface Temperature (Kelvin)</p></li>
-<li><p><strong>L8_ts_dem_30m_2014_03_10_069.tif</strong> - DEM corrected Temperature (Kelvin)</p></li>
-<li><p><strong>L8_vegt_cover_30m_2014_03_10_069.tif</strong> - vegetation cover (unitless)</p></li>
-</ul>
-</div>
-</div>
+</div></div>
 
 
            </div>
