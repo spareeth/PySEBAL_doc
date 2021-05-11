@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PySEBAL Installation &mdash; PySEBAL_doc 0.1 documentation</title>
+  <title>PySEBAL Installation &mdash; PySEBAL_doc 0.2 documentation</title>
   
 
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -27,10 +30,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -52,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PySEBAL_doc
+            <a href="index.html" class="icon icon-home"> PySEBAL_doc
           
 
           
@@ -109,6 +112,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gapfill.html">Aggregating to monthly and gapfilling</a></li>
 </ul>
 
             
@@ -149,6 +153,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -160,7 +166,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -182,16 +188,16 @@
 <div class="section" id="hardware">
 <h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>CPU with 2 cores and &gt; 2GHz processor</p></li>
-<li><p>Minimum of 8 GB RAM</p></li>
-<li><p>Storage space of 10 - 20 GB if processing multiple landsat tiles</p></li>
+<li>CPU with 2 cores and &gt; 2GHz processor</li>
+<li>Minimum of 8 GB RAM</li>
+<li>Storage space of 10 - 20 GB if processing multiple landsat tiles</li>
 </ul>
 </div>
 <div class="section" id="operating-systems">
 <h3>Operating systems<a class="headerlink" href="#operating-systems" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)</p></li>
-<li><p>Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)</p></li>
+<li>Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)</li>
+<li>Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)</li>
 </ul>
 <p>PySEBAL can be run in Python 3, (tested in python &gt; 3.6).</p>
 </div>
@@ -233,16 +239,16 @@ Or get it from the usb stick provided.</div>
 <div class="line">Double click the OSGeo4W installer</div>
 </div>
 <ul class="simple">
-<li><p>Select “advanced install” and click “Next”</p></li>
+<li>Select “advanced install” and click “Next”</li>
 </ul>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/osgeo1.png"><img alt="_images/osgeo1.png" src="_images/osgeo1.png" style="width: 400px;" /></a>
 </div>
 <ul>
-<li><p>In this step there are two options, choose option 1 or 2.</p>
+<li><p class="first">In this step there are two options, choose option 1 or 2.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Select “Install from Local Directory” and click “Next”, if you want to install from the source libraries provided to you in USB.</p></li>
+<li>Select “Install from Local Directory” and click “Next”, if you want to install from the source libraries provided to you in USB.</li>
 </ol>
 <blockquote>
 <div><div class="figure align-center">
@@ -250,7 +256,7 @@ Or get it from the usb stick provided.</div>
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li><p>Select “Install from internet” and click “Next”, you must be connected to a good internet.</p></li>
+<li>Select “Install from internet” and click “Next”, you must be connected to a good internet.</li>
 </ol>
 <blockquote>
 <div><div class="figure align-center">
@@ -259,42 +265,43 @@ Or get it from the usb stick provided.</div>
 </div></blockquote>
 </div></blockquote>
 </li>
-<li><p>In this step select the root directory and access to users, keep default settings, and optionally “Create icon on Desktop” for easy access.</p></li>
+<li><p class="first">In this step select the root directory and access to users, keep default settings, and optionally “Create icon on Desktop” for easy access.</p>
+</li>
 </ul>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/osgeo3.png"><img alt="_images/osgeo3.png" src="_images/osgeo3.png" style="width: 400px;" /></a>
 </div>
 <ul class="simple">
-<li><p>Here choose the folder with local repository (provided to you in USB) if you have selected option 1 in the previous step <strong>or</strong> choose the folder (default option) to download the libraries from internet if you have selected option 2 in the previous step and click “Next”.</p></li>
+<li>Here choose the folder with local repository (provided to you in USB) if you have selected option 1 in the previous step <strong>or</strong> choose the folder (default option) to download the libraries from internet if you have selected option 2 in the previous step and click “Next”.</li>
 </ul>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/osgeo4.png"><img alt="_images/osgeo4.png" src="_images/osgeo4.png" style="width: 400px;" /></a>
 </div>
 <ul class="simple">
-<li><p>In case of option 2 “Install from internet” in the previous step, select the default option “Direct Connection” and click “Next”.</p></li>
-<li><p>In case of option 2 “Install from internet” in the previous step, select the default option “<a class="reference external" href="http://download.osgeo.org">http://download.osgeo.org</a>” as the download site and click “Next”.</p></li>
+<li>In case of option 2 “Install from internet” in the previous step, select the default option “Direct Connection” and click “Next”.</li>
+<li>In case of option 2 “Install from internet” in the previous step, select the default option “<a class="reference external" href="http://download.osgeo.org">http://download.osgeo.org</a>” as the download site and click “Next”.</li>
 </ul>
 <ul class="simple">
-<li><p>In this step, search for the following packages <strong>one by one</strong>, and select the appropriate (latest) versions by clicking the <img alt="icon" src="_images/osgeo_icon.png" /> icon under the column <strong>New</strong>. Check under the <strong>Package</strong> column if you are selecting exact library as stated below.</p></li>
+<li>In this step, search for the following packages <strong>one by one</strong>, and select the appropriate (latest) versions by clicking the <img alt="icon" src="_images/osgeo_icon.png" /> icon under the column <strong>New</strong>. Check under the <strong>Package</strong> column if you are selecting exact library as stated below.</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do not click next before selecting all the packages listed below !</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">Do not click next before selecting all the packages listed below !</p>
 </div>
 <div class="line-block">
 <div class="line">The required libraries are:</div>
 </div>
 <blockquote>
 <div><ul class="simple">
-<li><p>qgis-ltr</p></li>
-<li><p>grass</p></li>
-<li><p>qgis-ltr-grass-plugin7</p></li>
-<li><p>msys</p></li>
-<li><p>pyproj (select both the packages for python 2 &amp; 3)</p></li>
-<li><p>pandas (select all four packages python 2 &amp; 3 , pandas and geopandas packages)</p></li>
-<li><p>scipy (select both the packages for python 2 &amp; 3)</p></li>
-<li><p>tcltk (select both the packages for python 2 &amp; 3)</p></li>
-<li><p>pip (select both the packages for python 2 &amp; 3)</p></li>
+<li>qgis-ltr</li>
+<li>grass</li>
+<li>qgis-ltr-grass-plugin7</li>
+<li>msys</li>
+<li>pyproj (select both the packages for python 2 &amp; 3)</li>
+<li>pandas (select all four packages python 2 &amp; 3 , pandas and geopandas packages)</li>
+<li>scipy (select both the packages for python 2 &amp; 3)</li>
+<li>tcltk (select both the packages for python 2 &amp; 3)</li>
+<li>pip (select both the packages for python 2 &amp; 3)</li>
 </ul>
 <div class="line-block">
 <div class="line">Click “Next” and finish the installation</div>
@@ -307,41 +314,41 @@ Or get it from the usb stick provided.</div>
 <div class="line"><strong>Steps</strong></div>
 </div>
 <ul class="simple">
-<li><p>Right click “This PC” in Windows 10 <strong>OR</strong> “My Computer” in windows 7, go to <em>Properties</em> -&gt; <em>Advaced system settings</em> -&gt; <em>Advanced</em> tab -&gt; <em>Environment variables</em> -&gt; <em>System variables</em>.</p></li>
-<li><p>Click new and add four new system variables. Add the <strong>Variable name</strong> and <strong>Variable value</strong> as shown below.</p></li>
+<li>Right click “This PC” in Windows 10 <strong>OR</strong> “My Computer” in windows 7, go to <em>Properties</em> -&gt; <em>Advaced system settings</em> -&gt; <em>Advanced</em> tab -&gt; <em>Environment variables</em> -&gt; <em>System variables</em>.</li>
+<li>Click new and add four new system variables. Add the <strong>Variable name</strong> and <strong>Variable value</strong> as shown below.</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>GDAL_DATA</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\share\epsg_csv</span></code></p></li>
-<li><p><strong>SEBAL</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code></p></li>
+<li><strong>GDAL_DATA</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\share\epsg_csv</span></code></li>
+<li><strong>SEBAL</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li><p>Edit the variable <strong>Path</strong> in the <strong>System variables</strong> to add the path <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code> to the end followed by a semicolon (;) in windows 7 <strong>OR</strong> add this path as a new line in the path variable in Windows 10.</p></li>
+<li>Edit the variable <strong>Path</strong> in the <strong>System variables</strong> to add the path <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code> to the end followed by a semicolon (;) in windows 7 <strong>OR</strong> add this path as a new line in the path variable in Windows 10.</li>
 </ul>
 <div class="line-block">
 <div class="line"><strong>Step3 - Install additional dependencies</strong></div>
 </div>
 <ul class="simple">
-<li><p>In the program menu search for “OSGeo4W Shell” or if you have selected “Create icon on Desktop” option in the previous step, it should be in the desktop. Now open “OSGeo4W Shell”</p></li>
+<li>In the program menu search for “OSGeo4W Shell” or if you have selected “Create icon on Desktop” option in the previous step, it should be in the desktop. Now open “OSGeo4W Shell”</li>
 </ul>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/shell1.png"><img alt="_images/shell1.png" src="_images/shell1.png" style="width: 200px;" /></a>
 </div>
 <ul class="simple">
-<li><p>In the OSGeo4W Shell type in the following commands to install packages - <em>setuptools, openpyxl, netCDF4, joblib</em></p></li>
+<li>In the OSGeo4W Shell type in the following commands to install packages - <em>setuptools, openpyxl, netCDF4, joblib</em></li>
 </ul>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip3 install setuptools
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip3 install setuptools
 pip3 install openpyxl netCDF4 joblib
 </pre></div>
 </td></tr></table></div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In case the above installation give <code class="docutils literal notranslate"><span class="pre">fatar</span> <span class="pre">error</span></code> then please try the following commands.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">In case the above installation give <code class="docutils literal notranslate"><span class="pre">fatar</span> <span class="pre">error</span></code> then please try the following commands.</p>
 </div>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip3 install setuptools
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip3 install setuptools
 python -m pip3 install openpyxl netCDF4 joblib
 </pre></div>
 </td></tr></table></div>
@@ -349,18 +356,18 @@ python -m pip3 install openpyxl netCDF4 joblib
 <div class="section" id="test-installation">
 <h3>Test installation<a class="headerlink" href="#test-installation" title="Permalink to this headline">¶</a></h3>
 <p>To test whether the PySEBAL will run, open OSGeo4W Shell, and type following commands.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># Change drive</span>
 <span class="n">D</span><span class="p">:</span>
@@ -380,34 +387,34 @@ python -m pip3 install openpyxl netCDF4 joblib
 <h2>Installation in Linux<a class="headerlink" href="#installation-in-linux" title="Permalink to this headline">¶</a></h2>
 <p>The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in <strong>Bash for Windows</strong> app with Ubuntu inside windows 10.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can check the python version using the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> in a terminal</p>
+<p class="first admonition-title">Note</p>
+<p class="last">You can check the python version using the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> in a terminal</p>
 </div>
 <div class="section" id="id1">
 <h3>Installing dependencies<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The dependencies packages are same as those in windows except for msys. We also install git to download and clone the PySEBAL_dev repository.</p>
 <p>Open a Terminal and type in following commands to install required packages. You should have admin rights to install packages.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please remove all the QGIS and GRASS packages you may have installed from other repositories before doing the update.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">Please remove all the QGIS and GRASS packages you may have installed from other repositories before doing the update.</p>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># Install git</span>
 sudo apt-get install git
@@ -431,13 +438,13 @@ pip install openpyxl netCDF4 joblib
 <div class="section" id="download-source-code">
 <h3>Download source code<a class="headerlink" href="#download-source-code" title="Permalink to this headline">¶</a></h3>
 <p>Open a terminal and type in following git command to download the PySEBAL_dev repository.</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># change to working directory,</span>
 <span class="c1"># /mnt/d if you are accessing windows D: drive from linux. For example &quot;bash for windows&quot; in windows 10</span>
@@ -450,18 +457,18 @@ git clone https://github.com/spareeth/PySEBAL_dev.git
 <div class="section" id="testing-installation">
 <h3>Testing installation<a class="headerlink" href="#testing-installation" title="Permalink to this headline">¶</a></h3>
 <p>Open a terminal and type in following codes to test if the installation is successful.</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># change to the PySEBAL_dev directory, assuming that the repository is cloned in /mnt/d</span>
 <span class="nb">cd</span> /mnt/d/PySEBAL_dev/SEBAL
@@ -489,12 +496,12 @@ exit<span class="o">()</span>
 <div class="line-block">
 <div class="line"><strong>In Windows</strong></div>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># change to the PySEBAL_dev\SEBAL directory</span>
 <span class="nb">cd</span> D:<span class="se">\P</span>ySEBAL_dev<span class="se">\S</span>EBAL
@@ -505,12 +512,12 @@ python Run_py3.py
 <div class="line-block">
 <div class="line"><strong>In Linux</strong></div>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># change to the PySEBAL_dev\SEBAL directory</span>
 <span class="nb">cd</span> <span class="se">\m</span>nt<span class="se">\d\P</span>ySEBAL_dev<span class="se">\S</span>EBAL
@@ -523,12 +530,12 @@ python Run_py3.py
 <a class="reference internal image-reference" href="_images/pysebal_folderstr1.png"><img alt="_images/pysebal_folderstr1.png" src="_images/pysebal_folderstr1.png" style="width: 200px;" /></a>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If PySEBAL_dev is not in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, adapt changes to the path in above commands accordingly. To change the path open the excel sheet <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_WIN.xlsx</span></code> in case of Windows OR open <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_LIN.xlsx</span></code> in case of Linux. You need to change the path in columns B, C &amp; E in the sheet 1.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">If PySEBAL_dev is not in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, adapt changes to the path in above commands accordingly. To change the path open the excel sheet <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_WIN.xlsx</span></code> in case of Windows OR open <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_LIN.xlsx</span></code> in case of Linux. You need to change the path in columns B, C &amp; E in the sheet 1.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Now go to the folder <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data\output\Output_evapotranspiration</span></code> and check the daily ETa map (<em>L8_ETact_24_30m_2014_03_10_069.tif</em>) in QGIS.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Now go to the folder <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data\output\Output_evapotranspiration</span></code> and check the daily ETa map (<em>L8_ETact_24_30m_2014_03_10_069.tif</em>) in QGIS.</p>
 </div>
 </div>
 </div>
@@ -538,37 +545,29 @@ python Run_py3.py
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="data.html" class="btn btn-neutral float-right" title="PySEBAL data requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="PySEBAL documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="data.html" class="btn btn-neutral float-right" title="PySEBAL data requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="PySEBAL documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education
+        &#169; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PySEBAL data requirements &mdash; PySEBAL_doc 0.1 documentation</title>
+  <title>PySEBAL data requirements &mdash; PySEBAL_doc 0.2 documentation</title>
   
 
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -27,10 +30,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -52,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PySEBAL_doc
+            <a href="index.html" class="icon icon-home"> PySEBAL_doc
           
 
           
@@ -97,6 +100,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gapfill.html">Aggregating to monthly and gapfilling</a></li>
 </ul>
 
             
@@ -137,6 +141,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -148,7 +154,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/data.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -167,7 +173,7 @@
 <p>To run PySEBAL we need the following input data as shown below in the figure.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="_images/data1.png"><img alt="_images/data1.png" src="_images/data1.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-text">List of input data required for PySEBAL</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">List of input data required for PySEBAL</span></p>
 </div>
 <div class="section" id="satellite-data">
 <h2>Satellite data<a class="headerlink" href="#satellite-data" title="Permalink to this headline">¶</a></h2>
@@ -177,8 +183,8 @@ In this documentation currently PySEBAL using Landsat data as input is explained
 <h3>Acquiring Landsat data<a class="headerlink" href="#acquiring-landsat-data" title="Permalink to this headline">¶</a></h3>
 <p>The main archive of Landsat satellite (all missions – TM/ETM/OLI) is earth explorer website: <a class="reference external" href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>First step is to create user login for this website so that you are able to download the data.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">First step is to create user login for this website so that you are able to download the data.</p>
 </div>
 <p>Let us now search and download data for Miandoab irrigation scheme in Iran for the time period April to September 2018.</p>
 <div class="line-block">
@@ -189,7 +195,7 @@ In this documentation currently PySEBAL using Landsat data as input is explained
 </div>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="_images/ls1.png"><img alt="_images/ls1.png" src="_images/ls1.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Setting the search criteria</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Setting the search criteria</span></p>
 </div>
 <p>Click on the result (red box) and a location popup will appear over on the map.</p>
 <div class="line-block">
@@ -200,7 +206,7 @@ In this documentation currently PySEBAL using Landsat data as input is explained
 </div>
 <div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="_images/ls2.png"><img alt="_images/ls2.png" src="_images/ls2.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Setting the date range</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Setting the date range</span></p>
 </div>
 <div class="line-block">
 <div class="line"><strong>Step3</strong></div>
@@ -210,7 +216,7 @@ In this documentation currently PySEBAL using Landsat data as input is explained
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="_images/ls3.png"><img alt="_images/ls3.png" src="_images/ls3.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Setting additional criteria and listing results</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Setting additional criteria and listing results</span></p>
 </div>
 <p>Here we are selecting only Landsat 8 data. For previous years you can also try with Landsat 7 ETM, and Landsat 4/5 TM. Finally click the “Results” to see list of all available data with our conditions met for the study area in the given period of time.</p>
 <div class="line-block">
@@ -221,17 +227,17 @@ In this documentation currently PySEBAL using Landsat data as input is explained
 </div>
 <div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="_images/ls4.png"><img alt="_images/ls4.png" src="_images/ls4.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">List of available landsat 8 data for the given period of time</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">List of available landsat 8 data for the given period of time</span></p>
 </div>
 <p>The image icon under each result can be used to see the preview of that landsat scene (see Figure above). The download icon can be used to download that single scene with out ordering. While the Bulk download icon can be used to get a single link to download multiple products at a time. More details on bulk download can be found here - <a class="reference external" href="https://www.usgs.gov/media/videos/eros-earthexplorer-how-do-a-bulk-download">https://www.usgs.gov/media/videos/eros-earthexplorer-how-do-a-bulk-download</a>.</p>
 <div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="_images/ls6.png"><img alt="_images/ls6.png" src="_images/ls6.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-text">Showing the preview image of a landsat scene</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Showing the preview image of a landsat scene</span></p>
 </div>
 <p>For example, image dated 22 June 2018 looks really good, click on the download icon to get the data. You have to login in order to download the data.</p>
 <div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="_images/ls5.png"><img alt="_images/ls5.png" src="_images/ls5.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Landsat download options, select the one highlighted</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Landsat download options, select the one highlighted</span></p>
 </div>
 <p>From the list of options download the “Level-1 GeoTIFF Data Product” to get all the spectral bands and metadata of the scene.</p>
 </div>
@@ -242,17 +248,17 @@ In this documentation currently PySEBAL using Landsat data as input is explained
 <div class="line"><strong>Steps</strong></div>
 </div>
 <ul class="simple">
-<li><p>Install gsutil library - <a class="reference external" href="https://pypi.org/project/gsutil/">https://pypi.org/project/gsutil/</a></p></li>
-<li><p>If you want to list all the Landsat 8 data over Miandoab covering tile 168/034 in June 2018 use the following command:</p></li>
+<li>Install gsutil library - <a class="reference external" href="https://pypi.org/project/gsutil/">https://pypi.org/project/gsutil/</a></li>
+<li>If you want to list all the Landsat 8 data over Miandoab covering tile 168/034 in June 2018 use the following command:</li>
 </ul>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>gsutil ls -d gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_201806*T1
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>gsutil ls -d gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_201806*T1
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
-<li><p>To download them, use the following command:</p></li>
+<li>To download them, use the following command:</li>
 </ul>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># &#39;.&#39; means it will download to present directory</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># &#39;.&#39; means it will download to present directory</span>
 gsutil -m cp -r gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_201806*T1 .
 </pre></div>
 </td></tr></table></div>
@@ -262,7 +268,7 @@ gsutil -m cp -r gs://gcp-public-data-landsat/LC08/01/168/034/LC08_L1TP_168034_20
 <h3>Naming convention of Landsat data<a class="headerlink" href="#naming-convention-of-landsat-data" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="_images/ls7.png"><img alt="_images/ls7.png" src="_images/ls7.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Landsat data naming convention</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Landsat data naming convention</span></p>
 </div>
 </div>
 </div>
@@ -287,34 +293,34 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 </div>
 <div class="figure align-center" id="id9">
 <a class="reference internal image-reference" href="_images/grass1.png"><img alt="_images/grass1.png" src="_images/grass1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">GRASS GIS start window, set DB, Location and Mapset here.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">GRASS GIS start window, set DB, Location and Mapset here.</span></p>
 </div>
 <div class="line-block">
 <div class="line">For an introduction to GRASS GIS see this <a class="reference external" href="https://gitpitch.com/veroandreo/grass_opengeohub2019/master?p=slides/intro">presentation</a>.</div>
 </div>
 <p>Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this <a class="reference external" href="https://github.com/spareeth/PySEBAL_doc/blob/version3.7.3/.bashrc">file</a> and save in <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$HOME</span></code> folder. Please change line no: 22 in this file <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> only the <code class="docutils literal notranslate"><span class="pre">/c/OSGeo4W64/apps/grass/grass78/scripts</span></code> to the corresponding path in your computer.</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Start the Linux bash</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Start the Linux bash</span>
  bash
 </pre></div>
 </td></tr></table></div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In the export path above, adapt your path accordingly. If your OSGeo4W installation is elsewhere, make changes accordingly.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">In the export path above, adapt your path accordingly. If your OSGeo4W installation is elsewhere, make changes accordingly.</p>
 </div>
 <p>Now in the command line type in following commands to extract required variables from GLDAS</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To see the metadata run the following command</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To see the metadata run the following command</span>
  gdalinfo GLDAS_NOAH025_3H.A20180606.0000.021.nc4
  <span class="c1"># To import specific humidity</span>
  gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.0000.021.nc4&quot;</span>:Qair_f_inst GLDAS_NOAH025_3H_20180606_0000_Qair.tif
@@ -329,12 +335,12 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 </pre></div>
 </td></tr></table></div>
 <p>** How to do the above set of commands using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop **</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To convert the Wind speed parameter for a day every three hours data, means 8 tif files for wind speed a day</span>
- <span class="k">for</span> i in <span class="s2">&quot;00&quot;</span> <span class="s2">&quot;03&quot;</span> <span class="s2">&quot;06&quot;</span> <span class="s2">&quot;09&quot;</span> <span class="s2">&quot;12&quot;</span> <span class="s2">&quot;15&quot;</span> <span class="s2">&quot;18&quot;</span> <span class="s2">&quot;21&quot;</span><span class="p">;</span> <span class="k">do</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To convert the Wind speed parameter for a day every three hours data, means 8 tif files for wind speed a day</span>
+ <span class="k">for</span> i <span class="k">in</span> <span class="s2">&quot;00&quot;</span> <span class="s2">&quot;03&quot;</span> <span class="s2">&quot;06&quot;</span> <span class="s2">&quot;09&quot;</span> <span class="s2">&quot;12&quot;</span> <span class="s2">&quot;15&quot;</span> <span class="s2">&quot;18&quot;</span> <span class="s2">&quot;21&quot;</span><span class="p">;</span> <span class="k">do</span>
      gdal_translate NETCDF:<span class="s2">&quot;GLDAS_NOAH025_3H.A20180606.</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">00.021.nc4&quot;</span>:Qair_f_inst GLDAS_NOAH025_3H_20180606_<span class="si">${</span><span class="nv">i</span><span class="si">}</span>00_Qair.tif
  <span class="k">done</span>
  <span class="c1"># Now repeat it for all the 6 parameters required for PySEBAL for both dates - 06 June 2019 and 22 June 2019</span>
@@ -344,59 +350,59 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 <div class="line">Now we have to import these <code class="docutils literal notranslate"><span class="pre">tif</span></code> files into GRASS GIS</div>
 <div class="line">Following commands will import the files into GRASS GIS</div>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To import all the above tif files</span>
- r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Qair.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Qair -o --o
- r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Psurf.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Psurf -o --o
- r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Tair.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Tair -o --o
- r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Wind.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Wind -o --o
- r.import.py <span class="nv">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_SWdown.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_SWdown -o --o
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To import all the above tif files</span>
+ r.import.py <span class="k">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Qair.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Qair -o --o
+ r.import.py <span class="k">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Psurf.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Psurf -o --o
+ r.import.py <span class="k">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Tair.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Tair -o --o
+ r.import.py <span class="k">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Wind.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_Wind -o --o
+ r.import.py <span class="k">in</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_SWdown.tif <span class="nv">out</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_0000_SWdown -o --o
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Try to do the above commands and the following commands using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Try to do the above commands and the following commands using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
 </div>
 <p>Let us set the Computational region in GRASS GIS so that rest of all the analysis compute only in our study area</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To set the computational region</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># To set the computational region</span>
  g.region <span class="nv">res</span><span class="o">=</span><span class="m">0</span>.25 -a
  g.region -p
 </pre></div>
 </td></tr></table></div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Always start your GRASS GIS work with checking the <code class="docutils literal notranslate"><span class="pre">g.region</span> <span class="pre">-p</span></code> to make sure about the computational region and resolution.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">Always start your GRASS GIS work with checking the <code class="docutils literal notranslate"><span class="pre">g.region</span> <span class="pre">-p</span></code> to make sure about the computational region and resolution.</p>
 </div>
 <div class="line-block">
 <div class="line">Now we have to do three major Steps</div>
 </div>
 <ul class="simple">
-<li><p>Convert airtemperature in kelvin to Deg C.</p></li>
-<li><p>Convert Pressure in Pa to Milli bar (Mb)</p></li>
-<li><p>Convert Specific humidity to relative humidity following the description <a class="reference external" href="https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity/">here</a></p></li>
+<li>Convert airtemperature in kelvin to Deg C.</li>
+<li>Convert Pressure in Pa to Milli bar (Mb)</li>
+<li>Convert Specific humidity to relative humidity following the description <a class="reference external" href="https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity/">here</a></li>
 </ul>
 <div class="line-block">
 <div class="line">Run the following commands to do the conversions:</div>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature</span>
  r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_0000_Tair_deg = GLDAS_NOAH025_3H_20180606_0000_Tair - 273.15&quot;</span> --o
      <span class="c1">## Pressure convert from pa to mb</span>
  r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_0000_Psurf_mb = GLDAS_NOAH025_3H_20180606_0000_Psurf / 100&quot;</span> --o
@@ -412,8 +418,8 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>How to do above set of commands in a single run using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ??</p>
+<p class="first admonition-title">Note</p>
+<p class="last">How to do above set of commands in a single run using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ??</p>
 </div>
 <p>Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.0300.021.nc4, GLDAS_NOAH025_3H.A20180606.0600.021.nc4, GLDAS_NOAH025_3H.A20180606.0900.021.nc4, GLDAS_NOAH025_3H.A20180606.1200.021.nc4, GLDAS_NOAH025_3H.A20180606.1500.021.nc4, GLDAS_NOAH025_3H.A20180606.1800.021.nc4, GLDAS_NOAH025_3H.A20180606.2100.021.nc4</p>
 <div class="line-block">
@@ -423,14 +429,14 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 <div class="line">Now let us create instantaneous and daily averages:</div>
 <div class="line">For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30 (Both Landsat and GLDAS times are in GMT). The time varies according to your study area.</div>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature instantaneous</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature instantaneous</span>
  r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_Tair_inst = GLDAS_NOAH025_3H_20180606_0900_Tair_deg&quot;</span>
  <span class="c1">## Shortwave radiation instantaneous</span>
  r.mapcalc <span class="s2">&quot;GLDAS_NOAH025_3H_20180606_SWdown_inst = GLDAS_NOAH025_3H_20180606_0900_SWdown&quot;</span>
@@ -441,24 +447,24 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>How to do above set of commands in a single run using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ??</p>
+<p class="first admonition-title">Note</p>
+<p class="last">How to do above set of commands in a single run using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ??</p>
 </div>
 <div class="line-block">
 <div class="line">Next calculate the daily averages</div>
 </div>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature daily average</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Air temperature daily average</span>
  <span class="nv">MAPS1</span><span class="o">=</span><span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_*_Tair_deg$ <span class="nv">sep</span><span class="o">=</span>, <span class="nv">map</span><span class="o">=</span>.<span class="p">|</span>cat<span class="sb">`</span>
  r.series <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">MAPS1</span><span class="si">}</span> <span class="nv">output</span><span class="o">=</span>GLDAS_NOAH025_3H_20180606_Tair_24 <span class="nv">method</span><span class="o">=</span>average
  <span class="c1">## Short wave radiation daily average</span>
@@ -473,47 +479,47 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>How to do above set of commands in a single run using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ??</p>
+<p class="first admonition-title">Note</p>
+<p class="last">How to do above set of commands in a single run using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ??</p>
 </div>
 <p>Now let us <strong>resample</strong> the instantaneous and daily averaged to avoid pixel effects and <strong>export</strong> the prepared raster maps to tif files for PySEBAL to read and process Landsat data.</p>
-<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Set the region with require resolution</span>
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">## Set the region with require resolution</span>
  g.region <span class="nv">vect</span><span class="o">=</span>study_area_big <span class="nv">res</span><span class="o">=</span><span class="m">0</span>.0625 -a
  <span class="c1">## change directory to output folder</span>
  <span class="nb">cd</span> /to/the/folder/you/want/to/store/meteo/data
  <span class="c1">## For loop to resample all the instantaneous maps</span>
- <span class="k">for</span> i in <span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>*inst$ <span class="nv">map</span><span class="o">=</span>.<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
-     r.resamp.bspline <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">method</span><span class="o">=</span>bicubic --o
-     r.out.gdal <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp.tif --o
+ <span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>*inst$ <span class="nv">map</span><span class="o">=</span>.<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+     r.resamp.bspline <span class="k">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">method</span><span class="o">=</span>bicubic --o
+     r.out.gdal <span class="k">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp.tif --o
  <span class="k">done</span>
  <span class="c1">## For loop to resample all the daily averages maps</span>
- <span class="k">for</span> i in <span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>*24$ <span class="nv">map</span><span class="o">=</span>.<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
-     r.resamp.bspline <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">method</span><span class="o">=</span>bicubic --o
-     r.out.gdal <span class="nv">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp.tif --o
+ <span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>g.list rast <span class="nv">pattern</span><span class="o">=</span>*24$ <span class="nv">map</span><span class="o">=</span>.<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+     r.resamp.bspline <span class="k">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">method</span><span class="o">=</span>bicubic --o
+     r.out.gdal <span class="k">in</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp <span class="nv">out</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>_interp.tif --o
  <span class="k">done</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Some usful GRASS GIS documentation and links:</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://grass.osgeo.org/grass78/manuals/index.html/">Module documentation</a></p></li>
-<li><p><a class="reference external" href="https://grasswiki.osgeo.org/wiki/GRASS-Wiki/">GRASS GIS Wiki</a></p></li>
-<li><p><a class="reference external" href="https://ncsu-osgeorel.github.io/grass-intro-workshop/">GRASS intro workshop held at NCSU</a></p></li>
-<li><p><a class="reference external" href="https://training.gismentors.eu/grass-gis-workshop-jena-2018/index.html/">GRASS GIS course in Jena 2018</a></p></li>
-<li><p><a class="reference external" href="https://training.gismentors.eu/grass-gis-irsae-winter-course-2018/index.html">GRASS GIS course IRSAE 2018</a></p></li>
-<li><p><a class="reference external" href="https://training.gismentors.eu/grass-gis-irsae-winter-course-2018/index.html">GRASS GIS course in Argentina 2018</a></p></li>
+<li><a class="reference external" href="https://grass.osgeo.org/grass78/manuals/index.html/">Module documentation</a></li>
+<li><a class="reference external" href="https://grasswiki.osgeo.org/wiki/GRASS-Wiki/">GRASS GIS Wiki</a></li>
+<li><a class="reference external" href="https://ncsu-osgeorel.github.io/grass-intro-workshop/">GRASS intro workshop held at NCSU</a></li>
+<li><a class="reference external" href="https://training.gismentors.eu/grass-gis-workshop-jena-2018/index.html/">GRASS GIS course in Jena 2018</a></li>
+<li><a class="reference external" href="https://training.gismentors.eu/grass-gis-irsae-winter-course-2018/index.html">GRASS GIS course IRSAE 2018</a></li>
+<li><a class="reference external" href="https://training.gismentors.eu/grass-gis-irsae-winter-course-2018/index.html">GRASS GIS course in Argentina 2018</a></li>
 </ul>
 </div>
 </div>
@@ -523,37 +529,29 @@ Here we will use instantaneous and daily average computed from GLDAS data. You c
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="run.html" class="btn btn-neutral float-right" title="PySEBAL data preparation and execution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="installation.html" class="btn btn-neutral float-left" title="PySEBAL Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="run.html" class="btn btn-neutral float-right" title="PySEBAL data preparation and execution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="PySEBAL Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education
+        &#169; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

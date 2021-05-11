@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PySEBAL data preparation and execution &mdash; PySEBAL_doc 0.1 documentation</title>
+  <title>PySEBAL data preparation and execution &mdash; PySEBAL_doc 0.2 documentation</title>
   
 
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -27,16 +30,17 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Aggregating to monthly and gapfilling" href="gapfill.html" />
     <link rel="prev" title="PySEBAL data requirements" href="data.html" /> 
 </head>
 
@@ -51,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PySEBAL_doc
+            <a href="index.html" class="icon icon-home"> PySEBAL_doc
           
 
           
@@ -93,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#details-of-the-output-data">Details of the output data</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gapfill.html">Aggregating to monthly and gapfilling</a></li>
 </ul>
 
             
@@ -133,6 +138,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -144,7 +151,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/run.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -166,70 +173,70 @@
 <p>Assuming that you have following folder structure (recommended) for input data:</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="_images/folder.png"><img alt="_images/folder.png" src="_images/folder.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Folder structure of input data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Folder structure of input data</span></p>
 </div>
 <p>Open the excel sheet provided to you - <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\docs\InputEXCEL_v3_3_7_WIN.xlsx</span></code> and make necessary changes to the excel sheet as listed below.</p>
 <p><strong>Sheet 1: General Input</strong></p>
 <ul class="simple">
-<li><p><strong>InputMap</strong> - set the path to your satellite data</p></li>
-<li><p><strong>OutputMap</strong> - Where you want to save PySEBAL outputs (if not existing, PySEBAL will create the folder)</p></li>
-<li><p><strong>Image_type</strong> - satellite type</p></li>
-<li><p><strong>NameDEM</strong> - set the path to DEM file (Note that you need to provide the file name with extension(.tif))</p></li>
+<li><strong>InputMap</strong> - set the path to your satellite data</li>
+<li><strong>OutputMap</strong> - Where you want to save PySEBAL outputs (if not existing, PySEBAL will create the folder)</li>
+<li><strong>Image_type</strong> - satellite type</li>
+<li><strong>NameDEM</strong> - set the path to DEM file (Note that you need to provide the file name with extension(.tif))</li>
 </ul>
 <p><strong>Sheet 2: Meteo_Input</strong></p>
 <ul class="simple">
-<li><p><strong>Temp_inst</strong> - set the path to instantaneous air temperature (including file name and extension)</p></li>
-<li><p><strong>Temp_24</strong> - set the path to daily average air temperature (including file name and extension)</p></li>
-<li><p><strong>RH_inst</strong> - set the path to instantaneous Relative humidity (including file name and extension)</p></li>
-<li><p><strong>RH_24</strong> - set the path to daily average Relative humidity (including file name and extension)</p></li>
-<li><p><strong>Wind_inst</strong> - set the path to instantaneous wind speed (including file name and extension)</p></li>
-<li><p><strong>Wind_24</strong> - set the path to daily average wind speed (including file name and extension)</p></li>
-<li><p><strong>Rs_inst</strong> - set the path to instantaneous downward shortwave radiation (including file name and extension)</p></li>
-<li><p><strong>Rs_24</strong> - set the path to daily downward shortwave radiation (including file name and extension)</p></li>
+<li><strong>Temp_inst</strong> - set the path to instantaneous air temperature (including file name and extension)</li>
+<li><strong>Temp_24</strong> - set the path to daily average air temperature (including file name and extension)</li>
+<li><strong>RH_inst</strong> - set the path to instantaneous Relative humidity (including file name and extension)</li>
+<li><strong>RH_24</strong> - set the path to daily average Relative humidity (including file name and extension)</li>
+<li><strong>Wind_inst</strong> - set the path to instantaneous wind speed (including file name and extension)</li>
+<li><strong>Wind_24</strong> - set the path to daily average wind speed (including file name and extension)</li>
+<li><strong>Rs_inst</strong> - set the path to instantaneous downward shortwave radiation (including file name and extension)</li>
+<li><strong>Rs_24</strong> - set the path to daily downward shortwave radiation (including file name and extension)</li>
 </ul>
 <p><strong>Sheet 3: Soil_Input</strong></p>
 <ul class="simple">
-<li><p><strong>Saturated soil moisture content</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Saturated soil moisture content subsoil</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Residual soil moisture content</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Residual soil moisture content subsoil</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Field_Capacity</strong> - set the path with filename and extension</p></li>
-<li><p><strong>Wilting point</strong> - set the path with filename and extension</p></li>
+<li><strong>Saturated soil moisture content</strong> - set the path with filename and extension</li>
+<li><strong>Saturated soil moisture content subsoil</strong> - set the path with filename and extension</li>
+<li><strong>Residual soil moisture content</strong> - set the path with filename and extension</li>
+<li><strong>Residual soil moisture content subsoil</strong> - set the path with filename and extension</li>
+<li><strong>Field_Capacity</strong> - set the path with filename and extension</li>
+<li><strong>Wilting point</strong> - set the path with filename and extension</li>
 </ul>
 <p><strong>Sheet 4: Landsat_Input</strong></p>
 <ul class="simple">
-<li><p><strong>Name Landsat Image</strong> - Name of the landsat image bands (for example without <code class="docutils literal notranslate"><span class="pre">_B1.TIF</span></code>)</p></li>
-<li><p><strong>Landsat Number</strong> - 4/5/7/8 depending which landsat</p></li>
-<li><p><strong>Bands Thermal</strong> - 1/2, In case of Landsat 8, it is 2</p></li>
-<li><p><strong>tscold_min</strong> - Min percentile to compute minimum threshold for cold pixel from temperature layer (Default is 5)</p></li>
-<li><p><strong>tscold_max</strong> - Max percentile to compute maximum threshold for cold pixel from temperature layer (Default is 10)</p></li>
-<li><p><strong>ndvihot_low</strong> - Min percentile to compute minimum threshold from NDVI layer (Default is 2)</p></li>
-<li><p><strong>ndvihot_high</strong> - Max percentile to compute maximum threshold from NDVI layer (Default is 5)</p></li>
-<li><p><strong>temp_lapse_rate</strong> - Temperature lapse rate for correction of surface temperature</p></li>
+<li><strong>Name Landsat Image</strong> - Name of the landsat image bands (for example without <code class="docutils literal notranslate"><span class="pre">_B1.TIF</span></code>)</li>
+<li><strong>Landsat Number</strong> - 4/5/7/8 depending which landsat</li>
+<li><strong>Bands Thermal</strong> - 1/2, In case of Landsat 8, it is 2</li>
+<li><strong>tscold_min</strong> - Min percentile to compute minimum threshold for cold pixel from temperature layer (Default is 5)</li>
+<li><strong>tscold_max</strong> - Max percentile to compute maximum threshold for cold pixel from temperature layer (Default is 10)</li>
+<li><strong>ndvihot_low</strong> - Min percentile to compute minimum threshold from NDVI layer (Default is 2)</li>
+<li><strong>ndvihot_high</strong> - Max percentile to compute maximum threshold from NDVI layer (Default is 5)</li>
+<li><strong>temp_lapse_rate</strong> - Temperature lapse rate for correction of surface temperature</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Number of Rows in the input excel sheet is equal to the number of landsat images you want to process. If you have 10 images, the row numbers are from 2 to 11.</p>
 </div>
 <p>Once the input excel sheet is ready, open the Run SEBAL python file (<code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code>) which is in <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> folder.</p>
 <p>Open the file <code class="docutils literal notranslate"><span class="pre">Run_py3.py</span></code> in Notepadd++.</p>
 <p><strong>Edits in Run_py3 file</strong></p>
 <p>We need to make following changes in this file:</p>
 <ul class="simple">
-<li><p><strong>Line 14</strong> - Set the path to prepared excel sheet</p></li>
-<li><p><strong>Line 15/16</strong> -Set start and end row numbers for running all the landsat images in one go.</p></li>
+<li><strong>Line 14</strong> - Set the path to prepared excel sheet</li>
+<li><strong>Line 15/16</strong> -Set start and end row numbers for running all the landsat images in one go.</li>
 </ul>
 </div>
 <div class="section" id="run-pysebal">
 <h2>Run PySEBAL<a class="headerlink" href="#run-pysebal" title="Permalink to this headline">¶</a></h2>
 <p>Once you made the changes save and close the file <code class="docutils literal notranslate"><span class="pre">Run_py3</span></code></p>
 <p>Now open <strong>new</strong> <strong>OSGeo4W Shell</strong> and cd to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\SEBAL</span></code> folder and run the following command.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py3</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">Run_py3</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max percentile thresholds for cold and hot pixels. As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds. If the ETa results are not desirable with the default values, you may want to try different combinations. Also for a specific region, one set of values seems to work.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">In the <strong>Sheet 4: Landsat_Input</strong> of the input excel sheet we have to set NDVI and Temperature min and max percentile thresholds for cold and hot pixels. As a rule of thumb, we can use 5th and 10th percentile from corrected surface temperature as low and high cold pixel thresholds. We use 2nd and 5th percentile from NDVI as low and high hot pixel thresholds. If the ETa results are not desirable with the default values, you may want to try different combinations. Also for a specific region, one set of values seems to work.</p>
 </div>
 </div>
 <div class="section" id="output-data-structure">
@@ -237,7 +244,7 @@
 <p>Once the PySEBAL run successfully, you will find following structure in the output folder (one set in the excel sheet !)</p>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="_images/output.png"><img alt="_images/output.png" src="_images/output.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Folder structure of output data</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Folder structure of output data</span></p>
 </div>
 </div>
 <div class="section" id="details-of-the-output-data">
@@ -246,39 +253,39 @@
 <p><strong>log.txt</strong> - All the constants and derived thresholds are stored here</p>
 <p><strong>Folder 1: Output_biomass_production</strong></p>
 <ul class="simple">
-<li><p><strong>L8_Biomass_production_30m_2014_03_10_069.tif</strong> - Biomass production (Kg/ha)</p></li>
-<li><p><strong>L8_Biomass_wp_30m_2014_03_10_069.tif</strong> - Biomass Water Productivity WPb (Kg/m3)</p></li>
-<li><p><strong>L8_Biomass_deficit_30m_2014_03_10_069.tif</strong> - Deficit Biomass production (Kg/ha)</p></li>
+<li><strong>L8_Biomass_production_30m_2014_03_10_069.tif</strong> - Biomass production (Kg/ha)</li>
+<li><strong>L8_Biomass_wp_30m_2014_03_10_069.tif</strong> - Biomass Water Productivity WPb (Kg/m3)</li>
+<li><strong>L8_Biomass_deficit_30m_2014_03_10_069.tif</strong> - Deficit Biomass production (Kg/ha)</li>
 </ul>
 <p><strong>Folder 2: Output_evapotranspiration</strong></p>
 <ul class="simple">
-<li><p><strong>L8_Advection_Factor_30m_2014_03_10_069.tif</strong> - Advection factor (unitless)</p></li>
-<li><p><strong>L8_EFinst_30m_2014_03_10_069.tif</strong> - instantaneous Evaporative Fraction (unitless)</p></li>
-<li><p><strong>L8_ET_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours ET deficit (mm/day)</p></li>
-<li><p><strong>L8_ETact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual EvapoTranspiration (mm/day)</p></li>
-<li><p><strong>L8_ETpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential EvapoTranspiration (mm/day)</p></li>
-<li><p><strong>L8_ETref_24_30m_2014_03_10_069.tif</strong> - 24 hours Reference EvapoTranspiration (mm/day)</p></li>
-<li><p><strong>L8_Eact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Evaporation (mm/day)</p></li>
-<li><p><strong>L8_T_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours Deficit Transpiration (mm/day)</p></li>
-<li><p><strong>L8_Tact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Transpiration (mm/day)</p></li>
-<li><p><strong>L8_Tpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential Transpiration (mm/day)</p></li>
-<li><p><strong>L8_cold_pixels_30m_2014_03_10_069.tif</strong> - Detected cold pixels (unitless)</p></li>
-<li><p><strong>L8_hot_pixels_30m_2014_03_10_069.tif</strong> - Detected hot pixels (unitless)</p></li>
-<li><p><strong>L8_kc_30m_2014_03_10_069.tif</strong> - Crop coefficient Kc (unitless)</p></li>
-<li><p><strong>L8_kc_max_30m_2014_03_10_069.tif</strong> - Max Crop coefficient Kc (unitless)</p></li>
-<li><p><strong>L8_water_mask_30m_2014_03_10_069.tif</strong> - Water mask (unitless)</p></li>
+<li><strong>L8_Advection_Factor_30m_2014_03_10_069.tif</strong> - Advection factor (unitless)</li>
+<li><strong>L8_EFinst_30m_2014_03_10_069.tif</strong> - instantaneous Evaporative Fraction (unitless)</li>
+<li><strong>L8_ET_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours ET deficit (mm/day)</li>
+<li><strong>L8_ETact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual EvapoTranspiration (mm/day)</li>
+<li><strong>L8_ETpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential EvapoTranspiration (mm/day)</li>
+<li><strong>L8_ETref_24_30m_2014_03_10_069.tif</strong> - 24 hours Reference EvapoTranspiration (mm/day)</li>
+<li><strong>L8_Eact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Evaporation (mm/day)</li>
+<li><strong>L8_T_24_deficit_30m_2014_03_10_069.tif</strong> - 24 hours Deficit Transpiration (mm/day)</li>
+<li><strong>L8_Tact_24_30m_2014_03_10_069.tif</strong> - 24 hours Actual Transpiration (mm/day)</li>
+<li><strong>L8_Tpot_24_30m_2014_03_10_069.tif</strong> - 24 hours Potential Transpiration (mm/day)</li>
+<li><strong>L8_cold_pixels_30m_2014_03_10_069.tif</strong> - Detected cold pixels (unitless)</li>
+<li><strong>L8_hot_pixels_30m_2014_03_10_069.tif</strong> - Detected hot pixels (unitless)</li>
+<li><strong>L8_kc_30m_2014_03_10_069.tif</strong> - Crop coefficient Kc (unitless)</li>
+<li><strong>L8_kc_max_30m_2014_03_10_069.tif</strong> - Max Crop coefficient Kc (unitless)</li>
+<li><strong>L8_water_mask_30m_2014_03_10_069.tif</strong> - Water mask (unitless)</li>
 </ul>
 <p><strong>Folder 3: Output_vegetation</strong></p>
 <ul class="simple">
-<li><p><strong>L8_L8_surface_temp_30m_2014_03_10_069.tif</strong> - TOA temperature (Kelvin)</p></li>
-<li><p><strong>L8_NDVI_30m_2014_03_10_069.tif</strong> - Normalized Diffrence Vegetation Index (unitless)</p></li>
-<li><p><strong>L8_SAVI_30m_2014_03_10_069.tif</strong> - Soil Adjusted Vegetation Index (unitless)</p></li>
-<li><p><strong>L8_lai_average_30m_2014_03_10_069.tif</strong> - Leaf Area Index (unitless)</p></li>
-<li><p><strong>L8_surface_albedo_30m_2014_03_10_069.tif</strong> - Surface albedo (unitless)</p></li>
-<li><p><strong>L8_surface_temp_sharpened_30m_2014_03_10_069.tif</strong> - Sharpened Temperature using NDVI (Kelvin)</p></li>
-<li><p><strong>L8_temp_corr_30m_2014_03_10_069.tif</strong> - Surface Temperature (Kelvin)</p></li>
-<li><p><strong>L8_ts_dem_30m_2014_03_10_069.tif</strong> - DEM corrected Temperature (Kelvin)</p></li>
-<li><p><strong>L8_vegt_cover_30m_2014_03_10_069.tif</strong> - vegetation cover (unitless)</p></li>
+<li><strong>L8_L8_surface_temp_30m_2014_03_10_069.tif</strong> - TOA temperature (Kelvin)</li>
+<li><strong>L8_NDVI_30m_2014_03_10_069.tif</strong> - Normalized Diffrence Vegetation Index (unitless)</li>
+<li><strong>L8_SAVI_30m_2014_03_10_069.tif</strong> - Soil Adjusted Vegetation Index (unitless)</li>
+<li><strong>L8_lai_average_30m_2014_03_10_069.tif</strong> - Leaf Area Index (unitless)</li>
+<li><strong>L8_surface_albedo_30m_2014_03_10_069.tif</strong> - Surface albedo (unitless)</li>
+<li><strong>L8_surface_temp_sharpened_30m_2014_03_10_069.tif</strong> - Sharpened Temperature using NDVI (Kelvin)</li>
+<li><strong>L8_temp_corr_30m_2014_03_10_069.tif</strong> - Surface Temperature (Kelvin)</li>
+<li><strong>L8_ts_dem_30m_2014_03_10_069.tif</strong> - DEM corrected Temperature (Kelvin)</li>
+<li><strong>L8_vegt_cover_30m_2014_03_10_069.tif</strong> - vegetation cover (unitless)</li>
 </ul>
 </div>
 </div>
@@ -288,35 +295,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="data.html" class="btn btn-neutral float-left" title="PySEBAL data requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="gapfill.html" class="btn btn-neutral float-right" title="Aggregating to monthly and gapfilling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="data.html" class="btn btn-neutral float-left" title="PySEBAL data requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education
+        &#169; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
