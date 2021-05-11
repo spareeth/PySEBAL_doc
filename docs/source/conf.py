@@ -133,8 +133,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PySEBAL_doc.tex', u'PySEBAL\\_doc Documentation',
-     u'Sajid Pareeth Tim Hessels, Poolad Karimi', 'manual'),
+    (master_doc, 'PySEBAL_doc.tex', u'PySEBAL Documentation',
+     u'Sajid Pareeth', 'manual'),
 ]
 
 
@@ -143,7 +143,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pysebal_doc', u'PySEBAL_doc Documentation',
+    (master_doc, 'pysebal_doc', u'PySEBAL Documentation',
      [author], 1)
 ]
 
@@ -154,7 +154,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PySEBAL_doc', u'PySEBAL_doc Documentation',
+    (master_doc, 'PySEBAL_doc', u'PySEBAL Documentation',
      author, 'PySEBAL_doc', 'One line description of project.',
      'Miscellaneous'),
 ]
