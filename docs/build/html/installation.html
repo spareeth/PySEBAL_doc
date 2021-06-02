@@ -40,7 +40,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PySEBAL data requirements" href="data.html" />
+    <link rel="next" title="Linux in Windows 10" href="install_Lin_Win.html" />
     <link rel="prev" title="PySEBAL documentation" href="index.html" /> 
 </head>
 
@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#test-run-pysebal">Test run PySEBAL</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="install_Lin_Win.html">Linux in Windows 10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gapfill.html">Aggregating to monthly and gapfilling</a></li>
@@ -199,7 +200,7 @@
 <li>Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)</li>
 <li>Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)</li>
 </ul>
-<p>PySEBAL can be run in Python 3, (tested in python &gt; 3.6).</p>
+<p>PySEBAL requires Python 3, (tested in python &gt; 3.6).</p>
 </div>
 </div>
 <div class="section" id="source-code">
@@ -339,8 +340,16 @@ Or get it from the usb stick provided.</div>
 <li>In the OSGeo4W Shell type in the following commands to install packages - <em>setuptools, openpyxl, netCDF4, joblib</em></li>
 </ul>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip3 install setuptools
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Enable python 3 by typing the following command and &#39;enter&#39;</span>
+py3_env
+<span class="c1"># Install following packages</span>
+pip3 install setuptools
 pip3 install openpyxl netCDF4 joblib
+pip3 install grass_session
 </pre></div>
 </td></tr></table></div>
 <div class="admonition warning">
@@ -554,7 +563,7 @@ python Run_py3.py
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="data.html" class="btn btn-neutral float-right" title="PySEBAL data requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install_Lin_Win.html" class="btn btn-neutral float-right" title="Linux in Windows 10" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="PySEBAL documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

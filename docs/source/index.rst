@@ -7,6 +7,7 @@ PySEBAL documentation
    :caption: Contents:
    
    installation
+   install_Lin_Win
    data
    run
    gapfill

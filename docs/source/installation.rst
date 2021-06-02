@@ -17,7 +17,7 @@ Operating systems
 * Windows 7/10 (Windows 8, 8.1 should also work, provided dependencies are met)
 * Linux (Tested in Ubuntu 18.04 LTS, other Linux OS should also work)
 
-PySEBAL can be run in Python 3, (tested in python > 3.6).
+PySEBAL requires Python 3, (tested in python > 3.6).
 
 Source code
 ===========
@@ -137,8 +137,12 @@ Setting environment variables
 .. code-block:: bash
    :linenos:
 
+   # Enable python 3 by typing the following command and 'enter'
+   py3_env
+   # Install following packages
    pip3 install setuptools
    pip3 install openpyxl netCDF4 joblib
+   pip3 install grass_session
 
 .. warning::
 

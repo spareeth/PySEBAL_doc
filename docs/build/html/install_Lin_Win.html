@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Linux in Windows 10 &mdash; PySEBAL_doc 0.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PySEBAL data requirements" href="data.html" />
+    <link rel="prev" title="PySEBAL Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PySEBAL_doc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">PySEBAL Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux in Windows 10</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-enable-windows-subsystem-for-linux-feature">Step 1: Enable “Windows Subsystem for Linux” feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-download-a-linux-system-from-the-windows-store">Step 2: Download a Linux system from the Windows store</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-run-linux-inside-windows-10">Step 3: Run Linux inside Windows 10</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-software">Additional Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mobaxterm">MobaXterm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spatial-libraries-in-ubuntu">Spatial libraries in ubuntu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">PySEBAL data requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">PySEBAL data preparation and execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gapfill.html">Aggregating to monthly and gapfilling</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySEBAL_doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Linux in Windows 10</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/install_Lin_Win.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux-in-windows-10">
+<h1>Linux in Windows 10<a class="headerlink" href="#linux-in-windows-10" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial explain steps to install a Linux kernel ‘Windows Subsystem for Linux (WSL)’ - Ubuntu in your Windows 10 Computer.</p>
+<p>WSL provides a Windows subsystem with Ubuntu (or other distros like SUSE) Linux runs atop it. It is not a virtual machine or an application like Cygwin. It is complete Linux system inside Windows 10. It allows you to run the same Bash shell that you find on Linux. This way you can run Linux commands inside Windows without the needing to install a virtual machine, or dual boot Linux and Windows. You install Linux inside Windows like a regular application. This is a good option if your main aim is to learn Linux/Unix commands.
+You can find more information <a class="reference external" href="https://itsfoss.com/install-bash-on-windows/">here</a>.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>This feature is available only in <strong>Windows 10</strong>.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-enable-windows-subsystem-for-linux-feature">
+<h3>Step 1: Enable “Windows Subsystem for Linux” feature<a class="headerlink" href="#step-1-enable-windows-subsystem-for-linux-feature" title="Permalink to this headline">¶</a></h3>
+<p>Go to start programs and type in “turn”. Select “Turn Windows features on or off” as shown in figure below:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lin1.png"><img alt="_images/lin1.png" src="_images/lin1.png" style="width: 400px;" /></a>
+</div>
+<p>Enable (or check) the feature for <strong>Windows Subsystem for Linux</strong> and <strong>Virtual Machine Platform</strong> and then <strong>restart</strong> your computer to make sure you have both of them enabled.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lin2.png"><img alt="_images/lin2.png" src="_images/lin2.png" style="width: 400px;" /></a>
+</div>
+<p><strong>RESTART</strong> your Computer !</p>
+</div>
+<div class="section" id="step-2-download-a-linux-system-from-the-windows-store">
+<h3>Step 2: Download a Linux system from the Windows store<a class="headerlink" href="#step-2-download-a-linux-system-from-the-windows-store" title="Permalink to this headline">¶</a></h3>
+<p>Once your system has restarted, go to the Windows Store and search for “Ubuntu”.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lin3.png"><img alt="_images/lin3.png" src="_images/lin3.png" style="width: 400px;" /></a>
+</div>
+<p>Select <strong>Ubuntu 20.04 LTS</strong> and install it by clicking on “Get” button on top right.
+You need to be connected to internet for the computer to download the Ubuntu distro and install in your computer.</p>
+</div>
+<div class="section" id="step-3-run-linux-inside-windows-10">
+<h3>Step 3: Run Linux inside Windows 10<a class="headerlink" href="#step-3-run-linux-inside-windows-10" title="Permalink to this headline">¶</a></h3>
+<p>Once you have installed Linux, Let us run it inside the Windows.</p>
+<p>Just search for Ubuntu in the Start programs. Click on Ubuntu which will open a command line terminal as shown below. You’ll see that it runs like a normal Windows application.
+Only the first time, it will take some time to setup and it will also ask you to set up a username and a password.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Password will not appear in the terminal (command line)</p>
+</div>
+<p>Now you are ready to use Linux inside Windows 10.</p>
+</div>
+</div>
+<div class="section" id="additional-software">
+<h2>Additional Software<a class="headerlink" href="#additional-software" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mobaxterm">
+<h3>MobaXterm<a class="headerlink" href="#mobaxterm" title="Permalink to this headline">¶</a></h3>
+<p>MobaXterm is a X server which enables user interface features for programs installed in Linux (Ubuntu) within Windows 10 in this case.</p>
+<p>Go to this <a class="reference external" href="https://itsfoss.com/install-bash-on-windows/">link</a>, download the home edition and install MobaXterm with default settings.</p>
+</div>
+<div class="section" id="spatial-libraries-in-ubuntu">
+<h3>Spatial libraries in ubuntu<a class="headerlink" href="#spatial-libraries-in-ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>Now let us also install some spatial libraries required for data processing in Ubuntu.</p>
+<p>Go to Start programs and open Ubuntu terminal.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Run the following commands to install gdal, proj, grass etc.</span>
+sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+sudo apt-get update
+sudo apt-get install grass grass-gui grass-core grass-doc grass-dev
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="data.html" class="btn btn-neutral float-right" title="PySEBAL data requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="PySEBAL Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
