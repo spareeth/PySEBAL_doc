@@ -39,6 +39,10 @@ Once your system has restarted, go to the Windows Store and search for “Ubuntu
    :align: center
    :width: 400
 
+.. figure:: img/lin4.png
+   :align: center
+   :width: 400
+
 Select **Ubuntu 20.04 LTS** and install it by clicking on "Get" button on top right.
 You need to be connected to internet for the computer to download the Ubuntu distro and install in your computer.
 
