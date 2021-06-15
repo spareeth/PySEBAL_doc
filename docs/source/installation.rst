@@ -165,7 +165,6 @@ To test whether the PySEBAL will run, open OSGeo4W Shell, and type following com
    # After each command click enter
    # Any line starting with '#' is comment line
    # First enable python 3 by typing the following command and 'enter'
-   py3_env 
    # Change drive
    D:
    cd PySEBAL_dev\SEBAL
