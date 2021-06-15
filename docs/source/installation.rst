@@ -138,7 +138,6 @@ Setting environment variables
    :linenos:
 
    # Enable python 3 by typing the following command and 'enter'
-   py3_env
    # Install following packages
    pip3 install setuptools
    pip3 install openpyxl netCDF4 joblib
