@@ -46,8 +46,7 @@ Installing dependencies
 | **Step1 - Download the OSGeo4W installer**
 
 | Get the OSGeo4W installer (https://trac.osgeo.org/osgeo4w/)
- from this `link <http://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe>`_ (64 bit)
- Or get it from the usb stick provided.
+ from this `link <http://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe>`_ .
 
 | **Step2 - Install the dependencies**
 
