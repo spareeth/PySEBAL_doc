@@ -230,7 +230,7 @@
 </div>
 <div class="line-block">
 <div class="line">Get the OSGeo4W installer (<a class="reference external" href="https://trac.osgeo.org/osgeo4w/">https://trac.osgeo.org/osgeo4w/</a>)
-from this <a class="reference external" href="http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe">link</a> (64 bit)
+from this <a class="reference external" href="http://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe">link</a> (64 bit)
 Or get it from the usb stick provided.</div>
 </div>
 <div class="line-block">
@@ -298,11 +298,14 @@ Or get it from the usb stick provided.</div>
 <li>grass</li>
 <li>qgis-ltr-grass-plugin7</li>
 <li>msys</li>
-<li>pyproj (select both the packages for python 2 &amp; 3)</li>
-<li>pandas (select all four packages python 2 &amp; 3 , pandas and geopandas packages)</li>
-<li>scipy (select both the packages for python 2 &amp; 3)</li>
-<li>tcltk (select both the packages for python 2 &amp; 3)</li>
-<li>pip (select both the packages for python 2 &amp; 3)</li>
+<li>pyproj (select python3-pyproj)</li>
+<li>pandas (select both python3-pandas and python3-geopandas packages)</li>
+<li>scipy (select python3-scipy)</li>
+<li>tcltk (select python3-tcltk)</li>
+<li>setuptools (select python3-setuptools)</li>
+<li>joblib (select python3-joblib)</li>
+<li>netCDF4 (select netcdf-tools, netcdf, python3-netcdf4)</li>
+<li>pip (select python3-pip)</li>
 </ul>
 <div class="line-block">
 <div class="line">Click “Next” and finish the installation</div>
@@ -318,12 +321,6 @@ Or get it from the usb stick provided.</div>
 <li>Right click “This PC” in Windows 10 <strong>OR</strong> “My Computer” in windows 7, go to <em>Properties</em> -&gt; <em>Advaced system settings</em> -&gt; <em>Advanced</em> tab -&gt; <em>Environment variables</em> -&gt; <em>System variables</em>.</li>
 <li>Click new and add four new system variables. Add the <strong>Variable name</strong> and <strong>Variable value</strong> as shown below.</li>
 </ul>
-<blockquote>
-<div><ul class="simple">
-<li><strong>GDAL_DATA</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\share\epsg_csv</span></code></li>
-<li><strong>SEBAL</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code></li>
-</ul>
-</div></blockquote>
 <ul class="simple">
 <li>Edit the variable <strong>Path</strong> in the <strong>System variables</strong> to add the path <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code> to the end followed by a semicolon (;) in windows 7 <strong>OR</strong> add this path as a new line in the path variable in Windows 10.</li>
 </ul>
@@ -341,24 +338,18 @@ Or get it from the usb stick provided.</div>
 </ul>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Enable python 3 by typing the following command and &#39;enter&#39;</span>
-py3_env
-<span class="c1"># Install following packages</span>
-pip3 install setuptools
-pip3 install openpyxl netCDF4 joblib
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Install following packages</span>
+pip3 install openpyxl
 pip3 install grass_session
 </pre></div>
 </td></tr></table></div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">In case the above installation give <code class="docutils literal notranslate"><span class="pre">fatar</span> <span class="pre">error</span></code> then please try the following commands.</p>
+<p class="last">In case the above installation give <code class="docutils literal notranslate"><span class="pre">fatal</span> <span class="pre">error</span></code> then please try the following commands.</p>
 </div>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip3 install setuptools
-python -m pip3 install openpyxl netCDF4 joblib
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip3 install openpyxl
+python -m pip3 install grass_session
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -377,11 +368,9 @@ python -m pip3 install openpyxl netCDF4 joblib
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># First enable python 3 by typing the following command and &#39;enter&#39;</span>
-<span class="n">py3_env</span>
 <span class="c1"># Change drive</span>
 <span class="n">D</span><span class="p">:</span>
 <span class="n">cd</span> <span class="n">PySEBAL_dev</span>\<span class="n">SEBAL</span>

@@ -46,7 +46,7 @@ Installing dependencies
 | **Step1 - Download the OSGeo4W installer**
 
 | Get the OSGeo4W installer (https://trac.osgeo.org/osgeo4w/)
- from this `link <http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe>`_ (64 bit)
+ from this `link <http://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe>`_ (64 bit)
  Or get it from the usb stick provided.
 
 | **Step2 - Install the dependencies**
@@ -102,11 +102,14 @@ Installing dependencies
  * grass
  * qgis-ltr-grass-plugin7
  * msys
- * pyproj (select both the packages for python 2 & 3)
- * pandas (select all four packages python 2 & 3 , pandas and geopandas packages)
- * scipy (select both the packages for python 2 & 3)
- * tcltk (select both the packages for python 2 & 3)
- * pip (select both the packages for python 2 & 3)
+ * pyproj (select python3-pyproj)
+ * pandas (select both python3-pandas and python3-geopandas packages)
+ * scipy (select python3-scipy)
+ * tcltk (select python3-tcltk)
+ * setuptools (select python3-setuptools)
+ * joblib (select python3-joblib)
+ * netCDF4 (select netcdf-tools, netcdf, python3-netcdf4)
+ * pip (select python3-pip)
  | Click "Next" and finish the installation
 
 Setting environment variables
@@ -117,9 +120,10 @@ Setting environment variables
 * Right click "This PC" in Windows 10 **OR** "My Computer" in windows 7, go to *Properties* -> *Advaced system settings* -> *Advanced* tab -> *Environment variables* -> *System variables*.
 
 * Click new and add four new system variables. Add the **Variable name** and **Variable value** as shown below.
+..
+   * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``!
 
- * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``
- * **SEBAL** set to ``C:\OSGeo4W64\bin``
+  * **SEBAL** set to ``C:\OSGeo4W64\bin``
 
 * Edit the variable **Path** in the **System variables** to add the path ``C:\OSGeo4W64\bin`` to the end followed by a semicolon (;) in windows 7 **OR** add this path as a new line in the path variable in Windows 10.
 
@@ -137,21 +141,19 @@ Setting environment variables
 .. code-block:: bash
    :linenos:
 
-   # Enable python 3 by typing the following command and 'enter'
    # Install following packages
-   pip3 install setuptools
-   pip3 install openpyxl netCDF4 joblib
+   pip3 install openpyxl
    pip3 install grass_session
 
 .. warning::
 
-   In case the above installation give ``fatar error`` then please try the following commands.
+   In case the above installation give ``fatal error`` then please try the following commands.
 
 .. code-block:: bash
    :linenos:
 
-   python -m pip3 install setuptools
-   python -m pip3 install openpyxl netCDF4 joblib
+   python -m pip3 install openpyxl
+   python -m pip3 install grass_session
 
 Test installation
 +++++++++++++++++
