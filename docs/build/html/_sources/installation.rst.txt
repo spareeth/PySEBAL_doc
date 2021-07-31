@@ -45,8 +45,7 @@ Installing dependencies
 | Following steps explain the installation procedure:
 | **Step1 - Download the OSGeo4W installer**
 
-| Get the OSGeo4W installer (https://trac.osgeo.org/osgeo4w/)
- from this `link <http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe>`_ (64 bit)
+| Get the OSGeo4W installer from this `link <https://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64-v1.exe>`_ (rightclick >> save link as)
  Or get it from the usb stick provided.
 
 | **Step2 - Install the dependencies**
