@@ -21,13 +21,18 @@ PySEBAL requires Python 3, (tested in python > 3.6).
 
 Source code
 ===========
-The PySEBAL library is hosted in a publicly available github repository. The library can be downloaded from `here <https://github.com/spareeth/PySEBAL_dev>`_. In the link select the latest ``version3.7.3`` and **Download ZIP**.
+The PySEBAL library is hosted in a publicly available github repository. The library can be downloaded from `here <https://github.com/spareeth/PySEBAL_dev>`_. In the link select the latest ``version3.7.3_osgeov1`` and **Download ZIP** (see below two screenshots).
 
-.. figure:: img/git3.png
+.. figure:: img/git31.png
    :align: center
    :width: 400
 
-| Once it is downloaded, unzip it (use *extract here*) into your ``D:\`` drive or any drive other than ``C:\`` drive. Rename the folder ``PySEBAL_dev-version3.7.3`` to ``PySEBAL_dev``.
+.. figure:: img/git4.png
+   :align: center
+   :width: 400
+
+| Once it is downloaded, unzip it (use *extract here*) into your ``D:\`` drive or any drive other than ``C:\`` drive. Rename the folder ``PySEBAL_dev-version3.7.3_osgeov1`` to ``PySEBAL_dev``.
+
 
 | The directory structure after download and unzip should like like below.
 
