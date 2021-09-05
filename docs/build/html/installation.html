@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/s4defs-roles.css" type="text/css" />
 
   
   
@@ -95,19 +96,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#source-code">Source code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-in-windows">Installation in Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-in-windows"><span class="red">Installation in Windows</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-environment-variables">Setting environment variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-installation">Test installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-in-linux">Installation in Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-in-linux"><span class="red">Installation in Linux</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Installing dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#download-source-code">Download source code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#testing-installation">Testing installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#test-run-pysebal">Test run PySEBAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-run-pysebal"><span class="red">Test run PySEBAL</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="install_Lin_Win.html">Linux in Windows 10</a></li>
@@ -209,35 +210,22 @@
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/git3.png"><img alt="_images/git3.png" src="_images/git3.png" style="width: 400px;" /></a>
 </div>
-<div class="line-block">
-<div class="line">Once it is downloaded, unzip it (use <em>extract here</em>) into your <code class="docutils literal notranslate"><span class="pre">D:\</span></code> drive or any drive other than <code class="docutils literal notranslate"><span class="pre">C:\</span></code> drive. Rename the folder <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev-version3.7.3</span></code> to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev</span></code>.</div>
-</div>
-<div class="line-block">
-<div class="line">The directory structure after download and unzip should like like below.</div>
-</div>
+<p>Once it is downloaded, unzip it (use <em>extract here</em>) into your <code class="docutils literal notranslate"><span class="pre">D:\</span></code> drive or any drive other than <code class="docutils literal notranslate"><span class="pre">C:\</span></code> drive. Rename the folder <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev-version3.7.3</span></code> to <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev</span></code>.</p>
+<p>The directory structure after download and unzip should like like below.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/git2.png"><img alt="_images/git2.png" src="_images/git2.png" style="width: 400px;" /></a>
 </div>
 </div>
 <div class="section" id="installation-in-windows">
-<h2>Installation in Windows<a class="headerlink" href="#installation-in-windows" title="Permalink to this headline">¶</a></h2>
+<h2><span class="red">Installation in Windows</span><a class="headerlink" href="#installation-in-windows" title="Permalink to this headline">¶</a></h2>
 <p>The PySEBAL library has multiple dependencies to support spatial data processing and computing. All the required libraries are open source. We reccomend using the OSGeo4W installer and environment to install all the dependencies and to run PySEBAL library in command line.</p>
 <div class="section" id="installing-dependencies">
 <h3>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h3>
-<div class="line-block">
-<div class="line">Following steps explain the installation procedure:</div>
-<div class="line"><strong>Step1 - Download the OSGeo4W installer</strong></div>
-</div>
-<div class="line-block">
-<div class="line">Get the OSGeo4W installer (<a class="reference external" href="https://trac.osgeo.org/osgeo4w/">https://trac.osgeo.org/osgeo4w/</a>)
-from this <a class="reference external" href="http://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe">link</a> .</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Step2 - Install the dependencies</strong></div>
-</div>
-<div class="line-block">
-<div class="line">Double click the OSGeo4W installer</div>
-</div>
+<p>Following steps explain the installation procedure:
+<strong>Step1 - Download the OSGeo4W installer</strong></p>
+<p>Get the OSGeo4W installer from this <a class="reference external" href="https://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64-v1.exe">link</a> .</p>
+<p><strong>Step2 - Install the dependencies</strong></p>
+<p>Double click the OSGeo4W installer</p>
 <ul class="simple">
 <li>Select “advanced install” and click “Next”</li>
 </ul>
@@ -288,9 +276,7 @@ from this <a class="reference external" href="http://download.osgeo.org/osgeo4w/
 <p class="first admonition-title">Warning</p>
 <p class="last">Do not click next before selecting all the packages listed below !</p>
 </div>
-<div class="line-block">
-<div class="line">The required libraries are:</div>
-</div>
+<p>The required libraries are:</p>
 <blockquote>
 <div><ul class="simple">
 <li>qgis-ltr</li>
@@ -301,31 +287,29 @@ from this <a class="reference external" href="http://download.osgeo.org/osgeo4w/
 <li>pandas (select both python3-pandas and python3-geopandas packages)</li>
 <li>scipy (select python3-scipy)</li>
 <li>tcltk (select python3-tcltk)</li>
-<li>setuptools (select python3-setuptools)</li>
-<li>joblib (select python3-joblib)</li>
-<li>netCDF4 (select netcdf-tools, netcdf, python3-netcdf4)</li>
 <li>pip (select python3-pip)</li>
+<li>setuptools (select python3-setuptools)</li>
+<li>netCDF4 (select python3-netcdf4)</li>
 </ul>
-<div class="line-block">
-<div class="line">Click “Next” and finish the installation</div>
-</div>
 </div></blockquote>
+<p>Click “Next” and finish the installation</p>
 </div>
 <div class="section" id="setting-environment-variables">
 <h3>Setting environment variables<a class="headerlink" href="#setting-environment-variables" title="Permalink to this headline">¶</a></h3>
-<div class="line-block">
-<div class="line"><strong>Steps</strong></div>
-</div>
+<p><strong>Steps</strong></p>
 <ul class="simple">
 <li>Right click “This PC” in Windows 10 <strong>OR</strong> “My Computer” in windows 7, go to <em>Properties</em> -&gt; <em>Advaced system settings</em> -&gt; <em>Advanced</em> tab -&gt; <em>Environment variables</em> -&gt; <em>System variables</em>.</li>
-<li>Click new and add four new system variables. Add the <strong>Variable name</strong> and <strong>Variable value</strong> as shown below.</li>
+<li>Click new and add new system variables. Add the <strong>Variable name</strong> and <strong>Variable value</strong> as shown below.</li>
 </ul>
+<blockquote>
+<div><ul class="simple">
+<li><strong>GDAL_DATA</strong> set to <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\share\epsg_csv</span></code></li>
+</ul>
+</div></blockquote>
 <ul class="simple">
 <li>Edit the variable <strong>Path</strong> in the <strong>System variables</strong> to add the path <code class="docutils literal notranslate"><span class="pre">C:\OSGeo4W64\bin</span></code> to the end followed by a semicolon (;) in windows 7 <strong>OR</strong> add this path as a new line in the path variable in Windows 10.</li>
 </ul>
-<div class="line-block">
-<div class="line"><strong>Step3 - Install additional dependencies</strong></div>
-</div>
+<p><strong>Step3 - Install additional dependencies</strong></p>
 <ul class="simple">
 <li>In the program menu search for “OSGeo4W Shell” or if you have selected “Create icon on Desktop” option in the previous step, it should be in the desktop. Now open “OSGeo4W Shell”</li>
 </ul>
@@ -333,12 +317,16 @@ from this <a class="reference external" href="http://download.osgeo.org/osgeo4w/
 <a class="reference internal image-reference" href="_images/shell1.png"><img alt="_images/shell1.png" src="_images/shell1.png" style="width: 200px;" /></a>
 </div>
 <ul class="simple">
-<li>In the OSGeo4W Shell type in the following commands to install packages - <em>setuptools, openpyxl, netCDF4, joblib</em></li>
+<li>In the OSGeo4W Shell type in the following commands to install packages - <em>openpyxl, joblib</em></li>
 </ul>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Install following packages</span>
-pip3 install openpyxl
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Install following packages</span>
+<span class="c1"># First enable python 3 by typing the following command and &#39;enter&#39;</span>
+py3_env
+pip3 install openpyxl joblib
 pip3 install grass_session
 </pre></div>
 </td></tr></table></div>
@@ -347,7 +335,7 @@ pip3 install grass_session
 <p class="last">In case the above installation give <code class="docutils literal notranslate"><span class="pre">fatal</span> <span class="pre">error</span></code> then please try the following commands.</p>
 </div>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip3 install openpyxl
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>python -m pip3 install openpyxl joblib
 python -m pip3 install grass_session
 </pre></div>
 </td></tr></table></div>
@@ -367,11 +355,15 @@ python -m pip3 install grass_session
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># After each command click enter</span>
 <span class="c1"># Any line starting with &#39;#&#39; is comment line</span>
 <span class="c1"># First enable python 3 by typing the following command and &#39;enter&#39;</span>
+<span class="n">py3_env</span>
 <span class="c1"># Change drive</span>
 <span class="n">D</span><span class="p">:</span>
+<span class="c1"># Change to the directory with SEBAL code</span>
 <span class="n">cd</span> <span class="n">PySEBAL_dev</span>\<span class="n">SEBAL</span>
 <span class="c1"># open python</span>
 <span class="n">python</span>
@@ -385,7 +377,7 @@ python -m pip3 install grass_session
 </div>
 </div>
 <div class="section" id="installation-in-linux">
-<h2>Installation in Linux<a class="headerlink" href="#installation-in-linux" title="Permalink to this headline">¶</a></h2>
+<h2><span class="red">Installation in Linux</span><a class="headerlink" href="#installation-in-linux" title="Permalink to this headline">¶</a></h2>
 <p>The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in <strong>Bash for Windows</strong> app with Ubuntu inside windows 10.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -486,17 +478,11 @@ exit<span class="o">()</span>
 </div>
 </div>
 <div class="section" id="test-run-pysebal">
-<h2>Test run PySEBAL<a class="headerlink" href="#test-run-pysebal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="red">Test run PySEBAL</span><a class="headerlink" href="#test-run-pysebal" title="Permalink to this headline">¶</a></h2>
 <p>Once PySEBAL is installed, we can run the PySEBAL code using the test data provided with the PySEBAL_dev library. The test data is located in the folder <code class="docutils literal notranslate"><span class="pre">PySEBAL_dev\test_data</span></code>. If you have installed PySEBAL in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive then it should be <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\test_data</span></code>.</p>
-<div class="line-block">
-<div class="line">Assuming that PySEBAL_dev is in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, Let us run the library with test data.</div>
-</div>
-<div class="line-block">
-<div class="line">Open a OSGeo4W Shell and change the directory to <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> and follow the commands given below.</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>In Windows</strong></div>
-</div>
+<p>Assuming that PySEBAL_dev is in <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive, Let us run the library with test data.</p>
+<p>Open a OSGeo4W Shell and change the directory to <code class="docutils literal notranslate"><span class="pre">D:\PySEBAL_dev\SEBAL</span></code> and follow the commands given below.</p>
+<p><strong>In Windows</strong></p>
 <div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -514,9 +500,7 @@ py3_env
 python Run_py3.py
 </pre></div>
 </td></tr></table></div>
-<div class="line-block">
-<div class="line"><strong>In Linux</strong></div>
-</div>
+<p><strong>In Linux</strong></p>
 <div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -559,7 +543,7 @@ python Run_py3.py
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Sajid Pareeth © 2020 IHE Delft Institute for Water Education.
+        &#169; Copyright Sajid Pareeth © 2021 IHE Delft Institute for Water Education.
 
     </p>
   </div>

@@ -26,9 +26,9 @@ The main archive of Landsat satellite (all missions – TM/ETM/OLI) is earth exp
 
 Let us now search and download data for Miandoab irrigation scheme in Iran for the time period April to September 2018.
 
-| **Step1**
+**Step1**
 
-| In the “Search Criteria” tab type in your “address/place” of your interest, in this case “Miandoab” and click “enter” or search for Path/row - 168/034.
+In the “Search Criteria” tab type in your “address/place” of your interest, in this case “Miandoab” and click “enter” or search for Path/row - 168/034.
 
 .. figure:: img/ls1.png
    :align: center
@@ -39,9 +39,9 @@ Let us now search and download data for Miandoab irrigation scheme in Iran for t
 
 Click on the result (red box) and a location popup will appear over on the map.
 
-| **Step2**
+**Step2**
 
-| Now enter the date range for which data is required in the same tab.
+Now enter the date range for which data is required in the same tab.
 
 .. figure:: img/ls2.png
    :align: center
@@ -49,9 +49,9 @@ Click on the result (red box) and a location popup will appear over on the map.
 
    Setting the date range
 
-| **Step3**
+**Step3**
 
-| Select the datasets you want to search and set the additional criteria of those data with cloud cover less than 20%
+Select the datasets you want to search and set the additional criteria of those data with cloud cover less than 20%
 
 .. figure:: img/ls3.png
    :align: center
@@ -61,9 +61,9 @@ Click on the result (red box) and a location popup will appear over on the map.
 
 Here we are selecting only Landsat 8 data. For previous years you can also try with Landsat 7 ETM, and Landsat 4/5 TM. Finally click the “Results” to see list of all available data with our conditions met for the study area in the given period of time.
 
-| **Step4**
+**Step4**
 
-| Check the listed scenes using browse images, select and download the 168/034 scene
+Check the listed scenes using browse images, select and download the 168/034 scene
 
 .. figure:: img/ls4.png
    :align: center
@@ -95,7 +95,7 @@ Bulk download Landsat data using command line
 
 This section explains how you can download big amount of Landsat data from Google cloud bucket using command line.
 
-| **Steps**
+**Steps**
 
 * Install gsutil library - https://pypi.org/project/gsutil/
 * If you want to list all the Landsat 8 data over Miandoab covering tile 168/034 in June 2018 use the following command:
@@ -130,17 +130,17 @@ Meteo data
 Meteo data is either obtained from field stations or from global models like GLDAS, ERA5, MERRA2 etc.
 Here we will use instantaneous and daily average computed from GLDAS data. You can download 3 hourly GLDAS data from this web link: https://hydro1.gesdisc.eosdis.nasa.gov/data/GLDAS/GLDAS_NOAH025_3H.2.1/
 
-| Once downloaded the data, we use GDAL and GRASS GIS to compute the required meteo parameters for PySEBAL.
+Once downloaded the data, we use GDAL and GRASS GIS to compute the required meteo parameters for PySEBAL.
 
-| The GLDAS data is provided in netCDF4 format with number of measured parameters as subdatasets. Let us assume that you have downloaded the GLDAS data for the 6 June 2018 00:00 hours.
+The GLDAS data is provided in netCDF4 format with number of measured parameters as subdatasets. Let us assume that you have downloaded the GLDAS data for the 6 June 2018 00:00 hours.
 
-| The file name will be ``GLDAS_NOAH025_3H.A20180606.0000.021.nc4``.
+The file name will be ``GLDAS_NOAH025_3H.A20180606.0000.021.nc4``.
 
 Now let us do all the processing in GDAL library and GRASS GIS already installed in your system.
 
-| Open **OSGeo4W Shell**
-| Type ``grass78 --gui`` and enter
-| It will open the following interface
+Open **OSGeo4W Shell**
+Type ``grass78 --gui`` and enter
+It will open the following interface
 
 .. figure:: img/grass1.png
    :align: center
@@ -148,7 +148,7 @@ Now let us do all the processing in GDAL library and GRASS GIS already installed
 
    GRASS GIS start window, set DB, Location and Mapset here.
 
-| For an introduction to GRASS GIS see this `presentation <https://gitpitch.com/veroandreo/grass_opengeohub2019/master?p=slides/intro>`_.
+For an introduction to GRASS GIS see this `presentation <https://gitpitch.com/veroandreo/grass_opengeohub2019/master?p=slides/intro>`_.
 
 Before we proceed with GRASS GIS we will set the linux environment in the OSGeo4W Shell. Please download this `file <https://github.com/spareeth/PySEBAL_doc/blob/version3.7.3/.bashrc>`_ and save in ``echo $HOME`` folder. Please change line no: 22 in this file ``.bashrc`` only the ``/c/OSGeo4W64/apps/grass/grass78/scripts`` to the corresponding path in your computer. 
 
@@ -194,8 +194,8 @@ Now in the command line type in following commands to extract required variables
 
 
 
-| Now we have to import these ``tif`` files into GRASS GIS
-| Following commands will import the files into GRASS GIS
+Now we have to import these ``tif`` files into GRASS GIS
+Following commands will import the files into GRASS GIS
 
 
 .. code-block:: Shell
@@ -227,12 +227,12 @@ Let us set the Computational region in GRASS GIS so that rest of all the analysi
 
    Always start your GRASS GIS work with checking the ``g.region -p`` to make sure about the computational region and resolution.
 
-| Now we have to do three major Steps
+Now we have to do three major Steps
 * Convert airtemperature in kelvin to Deg C.
 * Convert Pressure in Pa to Milli bar (Mb)
 * Convert Specific humidity to relative humidity following the description `here <https://earthscience.stackexchange.com/questions/2360/how-do-i-convert-specific-humidity-to-relative-humidity/>`_ 
 
-| Run the following commands to do the conversions:
+Run the following commands to do the conversions:
 
 .. code-block:: Shell
    :linenos:
@@ -259,11 +259,11 @@ Let us set the Computational region in GRASS GIS so that rest of all the analysi
 
 Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.0300.021.nc4, GLDAS_NOAH025_3H.A20180606.0600.021.nc4, GLDAS_NOAH025_3H.A20180606.0900.021.nc4, GLDAS_NOAH025_3H.A20180606.1200.021.nc4, GLDAS_NOAH025_3H.A20180606.1500.021.nc4, GLDAS_NOAH025_3H.A20180606.1800.021.nc4, GLDAS_NOAH025_3H.A20180606.2100.021.nc4 
 
-| Using single commands **OR** combine jobs using ``for`` loop
+Using single commands **OR** combine jobs using ``for`` loop
 
 
-| Now let us create instantaneous and daily averages:
-| For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30 (Both Landsat and GLDAS times are in GMT). The time varies according to your study area.
+Now let us create instantaneous and daily averages:
+For the data in 20180606 follow the commands below in GRASS GIS, For instantaneous we are going to take the data at 0900 hour as Landsat acquisition time is around 8:30 (Both Landsat and GLDAS times are in GMT). The time varies according to your study area.
 
 .. code-block:: Shell
    :linenos:
@@ -282,7 +282,7 @@ Repeat the above steps for other NC files as well, GLDAS_NOAH025_3H.A20180606.03
    How to do above set of commands in a single run using ``for`` loop ??
 
 
-| Next calculate the daily averages
+Next calculate the daily averages
 
 .. code-block:: Shell
    :linenos:

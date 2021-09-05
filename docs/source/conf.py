@@ -177,8 +177,16 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-copyright = "Sajid Pareeth © 2020 IHE Delft Institute for Water Education"
+copyright = "Sajid Pareeth © 2021 IHE Delft Institute for Water Education"
 
 # -- Extension configuration -------------------------------------------------
 def setup(app):
     app.add_stylesheet('custom.css')
+
+# -- to add colors -------------------------------------------------
+rst_prolog = """
+.. include:: <s5defs.txt>
+
+"""
+html_css_files = ['s4defs-roles.css']
+rst_epilog = "\n.. include:: .special.rst\n"

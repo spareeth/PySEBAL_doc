@@ -27,30 +27,29 @@ The PySEBAL library is hosted in a publicly available github repository. The lib
    :align: center
    :width: 400
 
-| Once it is downloaded, unzip it (use *extract here*) into your ``D:\`` drive or any drive other than ``C:\`` drive. Rename the folder ``PySEBAL_dev-version3.7.3`` to ``PySEBAL_dev``.
+Once it is downloaded, unzip it (use *extract here*) into your ``D:\`` drive or any drive other than ``C:\`` drive. Rename the folder ``PySEBAL_dev-version3.7.3`` to ``PySEBAL_dev``.
 
-| The directory structure after download and unzip should like like below.
+The directory structure after download and unzip should like like below.
 
 .. figure:: img/git2.png
    :align: center
    :width: 400
 
-Installation in Windows
-=======================
+:red:`Installation in Windows`
+==============================
 The PySEBAL library has multiple dependencies to support spatial data processing and computing. All the required libraries are open source. We reccomend using the OSGeo4W installer and environment to install all the dependencies and to run PySEBAL library in command line. 
 
 Installing dependencies
 +++++++++++++++++++++++
 
-| Following steps explain the installation procedure:
-| **Step1 - Download the OSGeo4W installer**
+Following steps explain the installation procedure:
+**Step1 - Download the OSGeo4W installer**
 
-| Get the OSGeo4W installer (https://trac.osgeo.org/osgeo4w/)
- from this `link <http://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe>`_ .
+Get the OSGeo4W installer from this `link <https://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64-v1.exe>`_ .
 
-| **Step2 - Install the dependencies**
+**Step2 - Install the dependencies**
 
-| Double click the OSGeo4W installer 
+Double click the OSGeo4W installer 
 
 * Select "advanced install" and click "Next"
 
@@ -65,6 +64,7 @@ Installing dependencies
     .. figure:: img/osgeo2b.png
        :align: center
        :width: 400
+
    2. Select "Install from internet" and click "Next", you must be connected to a good internet.
 
     .. figure:: img/osgeo2a.png
@@ -95,7 +95,7 @@ Installing dependencies
 
    Do not click next before selecting all the packages listed below !
 
-| The required libraries are:
+The required libraries are:
 
  * qgis-ltr
  * grass
@@ -105,29 +105,26 @@ Installing dependencies
  * pandas (select both python3-pandas and python3-geopandas packages)
  * scipy (select python3-scipy)
  * tcltk (select python3-tcltk)
- * setuptools (select python3-setuptools)
- * joblib (select python3-joblib)
- * netCDF4 (select netcdf-tools, netcdf, python3-netcdf4)
  * pip (select python3-pip)
- | Click "Next" and finish the installation
+ * setuptools (select python3-setuptools)
+ * netCDF4 (select python3-netcdf4)
+
+Click "Next" and finish the installation
 
 Setting environment variables
 +++++++++++++++++++++++++++++
 
-| **Steps**
+**Steps**
 
 * Right click "This PC" in Windows 10 **OR** "My Computer" in windows 7, go to *Properties* -> *Advaced system settings* -> *Advanced* tab -> *Environment variables* -> *System variables*.
+* Click new and add new system variables. Add the **Variable name** and **Variable value** as shown below. 
 
-* Click new and add four new system variables. Add the **Variable name** and **Variable value** as shown below.
-..
-   * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``!
-
-  * **SEBAL** set to ``C:\OSGeo4W64\bin``
+ * **GDAL_DATA** set to ``C:\OSGeo4W64\share\epsg_csv``
 
 * Edit the variable **Path** in the **System variables** to add the path ``C:\OSGeo4W64\bin`` to the end followed by a semicolon (;) in windows 7 **OR** add this path as a new line in the path variable in Windows 10.
 
 
-| **Step3 - Install additional dependencies**
+**Step3 - Install additional dependencies**
 
 * In the program menu search for "OSGeo4W Shell" or if you have selected "Create icon on Desktop" option in the previous step, it should be in the desktop. Now open "OSGeo4W Shell"
 
@@ -135,13 +132,15 @@ Setting environment variables
    :align: center
    :width: 200
 
-* In the OSGeo4W Shell type in the following commands to install packages - *setuptools, openpyxl, netCDF4, joblib*
+* In the OSGeo4W Shell type in the following commands to install packages - *openpyxl, joblib*
 
 .. code-block:: bash
    :linenos:
 
    # Install following packages
-   pip3 install openpyxl
+   # First enable python 3 by typing the following command and 'enter'
+   py3_env
+   pip3 install openpyxl joblib
    pip3 install grass_session
 
 .. warning::
@@ -151,7 +150,7 @@ Setting environment variables
 .. code-block:: bash
    :linenos:
 
-   python -m pip3 install openpyxl
+   python -m pip3 install openpyxl joblib
    python -m pip3 install grass_session
 
 Test installation
@@ -165,8 +164,10 @@ To test whether the PySEBAL will run, open OSGeo4W Shell, and type following com
    # After each command click enter
    # Any line starting with '#' is comment line
    # First enable python 3 by typing the following command and 'enter'
+   py3_env
    # Change drive
    D:
+   # Change to the directory with SEBAL code
    cd PySEBAL_dev\SEBAL
    # open python
    python
@@ -176,8 +177,8 @@ To test whether the PySEBAL will run, open OSGeo4W Shell, and type following com
    # To exit from python
    exit()
 
-Installation in Linux
-=====================
+:red:`Installation in Linux`
+============================
 
 The below steps are tested in Ubuntu 18.04 LTS, it should also work in other Linux distibutions, you may have to adapt some of the installation steps accordingly. This is also valid for installation in **Bash for Windows** app with Ubuntu inside windows 10.
 
@@ -253,16 +254,16 @@ Open a terminal and type in following codes to test if the installation is succe
    # To exit from python (ctrl-d)
    exit()
 
-Test run PySEBAL
-================
+:red:`Test run PySEBAL`
+=======================
 
 Once PySEBAL is installed, we can run the PySEBAL code using the test data provided with the PySEBAL_dev library. The test data is located in the folder ``PySEBAL_dev\test_data``. If you have installed PySEBAL in ``D:`` drive then it should be ``D:\PySEBAL_dev\test_data``.
 
-| Assuming that PySEBAL_dev is in ``D:`` drive, Let us run the library with test data.
+Assuming that PySEBAL_dev is in ``D:`` drive, Let us run the library with test data.
 
-| Open a OSGeo4W Shell and change the directory to ``D:\PySEBAL_dev\SEBAL`` and follow the commands given below.
+Open a OSGeo4W Shell and change the directory to ``D:\PySEBAL_dev\SEBAL`` and follow the commands given below.
 
-| **In Windows**
+**In Windows**
 
 .. code-block:: Shell
    :linenos:
@@ -276,7 +277,7 @@ Once PySEBAL is installed, we can run the PySEBAL code using the test data provi
    # Run the PySEBAL script
    python Run_py3.py
 
-| **In Linux**
+**In Linux**
 
 .. code-block:: Shell
    :linenos:
