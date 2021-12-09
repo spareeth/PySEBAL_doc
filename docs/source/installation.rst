@@ -57,17 +57,17 @@ Double click the OSGeo4W installer
    :align: center
    :width: 400
 
-* In this step there are two options, choose option 1 or 2.
+* In this step there are two options, choose option 1 OR 2. Most cases option 1, unless you get a package of source libraries during a training.
 
-   1. Select "Install from Local Directory" and click "Next", if you want to install from the source libraries provided to you in USB.
+   1. Select "Install from internet" and click "Next", you must be connected to a good internet.
 
-    .. figure:: img/osgeo2b.png
+    .. figure:: img/osgeo2a.png
        :align: center
        :width: 400
 
-   2. Select "Install from internet" and click "Next", you must be connected to a good internet.
+   2. Select "Install from Local Directory" and click "Next", if you want to install from the source libraries provided to you in USB.
 
-    .. figure:: img/osgeo2a.png
+    .. figure:: img/osgeo2b.png
        :align: center
        :width: 400
 
@@ -98,7 +98,7 @@ Double click the OSGeo4W installer
 The required libraries are:
 
  * qgis-ltr
- * grass
+ * grass (select version 7.8.5-1)
  * qgis-ltr-grass-plugin7
  * msys
  * pyproj (select python3-pyproj)
